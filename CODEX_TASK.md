@@ -1,18 +1,31 @@
-# Next Codex task: integrate actual AI while preserving the two-page architecture
+# Codex instructions — Face & Body Twin v0.3
 
-Repository: `edsvas168-cmd/face-body-twin`
+## Repository
+`edsvas168-cmd/face-body-twin`
 
-Please inspect the live project first, then work in small changes. Explain to the nontechnical project owner in Russian.
+## Product direction
+Keep the warm beige/ivory and forest-green editorial design. The homepage is **informational only**; all interactive food input and face/body scenario visualization stays at `/studio/`. Never merge the full Studio UI back into the homepage.
 
-## Product requirements
+On the homepage, two original AI-generated illustrations demonstrate the *concept* of before/possible scenario: `/assets/face-comparison.webp` and `/assets/body-comparison.webp`. Do not claim these are medically predicted consequences of food or genuine YouCam API outputs.
 
-1. **Keep the homepage `/` informational only.** About, benefits, how it works, research and FAQ stay on homepage. Never move the form or results back to the homepage.
-2. **Keep the simulator isolated at `/studio/`.** Face Twin / Body Twin and woman / man / optional uploaded photo must all work from this location.
-3. The core formula calculates food nutrients from source values and portions. Preserve handling for unknown sodium/sugar and distinguish sodium from salt. Do not invent percentages of facial swelling or skin change.
-4. Research and recommendations follow the scenario, with honest description of timing and uncertainty. No misleading claims of specific future appearance after one meal.
-5. Visually, use real editorial photographs, coherent premium green-and-ivory typography, responsive design, accessible contrast, crisp mobile alignment. No cartoon illustrations on the homepage.
-6. Prototype graphics must clearly say 'illustrative' until AI is actually working. Face demos currently only use a CSS display treatment; body demos still use vector silhouettes.
-7. Investigate current YouCam Face Reshape and Body Reshape docs, actual endpoint availability in project account, required credits/units and permitted input images. Do not pretend that an endpoint predicts the physiological effect of diet.
-8. Add serverless API routes if supported. Keep the API token in Vercel Environment Variables, never in frontend or logs. Never request secrets to be pasted into chat or committed to GitHub.
-9. Prioritize actual Face AI integration. Treat Body as separate phase. Protect consent and image deletion/retention before external uploads.
-10. Validate the existing functionality (models, food entry, safety warnings, results), mobile layout and broken links. Make minimal safe changes and explain deployment steps.
+## What is working
+- Main and Studio routes, dedicated `/assets` directory
+- EN/RU language toggle on homepage (default English)
+- Studio Face / Body tabs and female / male demo models, optional own image preview
+- Food selection, amounts and nutrient calculations, scenario explanations, warnings, and research links
+
+## Next implementation priorities
+1. Verify latest YouCam Face Reshape endpoint, task workflow, photo upload, parameter schema, unit billing, and hackathon eligibility in the user's account.
+2. Replace only the existing fake/demo appearance effect with genuine API image output if YouCam supports the intended *illustrative* transformation. The automatic mapping from nutrients to any chosen visual preset is a product rule, **not** a validated physiological model; disclose it.
+3. Keep all secrets server-side in Vercel environment variables, never in client HTML, public GitHub files or logs.
+4. Document photo consent, external processor, retention and deletion, and handle API errors/timeouts/low units without suggesting AI succeeded when it did not.
+5. Verify Body Reshape separately. Do not pretend Body mode is real AI until a body-photo workflow is tested.
+6. Keep extreme-input safety stops and avoid treating missing nutrient data as zero.
+7. Preserve homepage visuals, mobile responsiveness, research sources, Studio controls and calculations while changing APIs.
+
+## Scientific constraints
+- Nutrient totals are calculations from verified nutrient data and actual portion definitions, not guessed appearance changes.
+- Sodium is not salt: `salt_g ≈ sodium_mg * 2.5 / 1000` if estimating conversion.
+- The WHO sodium target is not a swelling threshold. No universal "grams salt -> % face edema" or "sugar -> acne tomorrow" formula.
+- For high-glycemic eating patterns and acne, communicate uncertainty and timing appropriately. Informational guidance, not a diagnosis or guarantee.
+- Current Studio is a prototype. Do not silently replace error handling with fake generated result.
