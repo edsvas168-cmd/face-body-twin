@@ -15,7 +15,6 @@
 .site-notice{background:#e9f0e6;border:1px solid var(--border);padding:14px 18px;border-radius:12px;font-size:12px;line-height:1.65;color:#516456;margin:0 0 20px}
 @media(max-width:680px){.studio-page-intro{padding:34px 0 0}}
 
-/* V0.3 visual refinement: same palette as the editorial landing page; simulator logic unchanged. */
 :root{--ink:#172b22;--green:#193c2b;--deep:#112e22;--sage:#e9eee5;--lime:#e7ebd8;--cream:#f9f5ed;--white:#fffcf7;--muted:#667169;--border:#dfdfd5;--shadow:0 16px 42px rgba(52,45,30,.055)}
 body{background:linear-gradient(120deg,#fbf7ef,#f7f3eb 55%,#f5f1e9);font-family:'DM Sans',sans-serif}
 .topbar{background:rgba(249,245,237,.95);border-bottom:1px solid #deddd3;height:86px}
@@ -48,6 +47,58 @@ h2{font-family:'Playfair Display',Georgia,serif;font-weight:500}
 footer{background:#efeee7;border-top:1px solid #deddd3}
 @media(max-width:700px){.topbar{height:67px}.logo{font-size:19px}.logo-icon{font-size:26px;width:23px}.studio-page-intro{padding:29px 0 4px}.studio-page-intro h1{font-size:46px}}
 
+:root{--ease:cubic-bezier(.22,.61,.36,1)}
+body{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .1 0 0 0 0 .15 0 0 0 0 .1 0 0 0 .035 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),linear-gradient(120deg,#fbf7ef,#f7f3eb 55%,#f5f1e9);background-repeat:repeat,no-repeat}
+.button{will-change:transform;transition:transform .28s var(--ease),background .28s var(--ease),box-shadow .28s var(--ease),border-color .28s var(--ease)}
+.button:hover{transform:translateY(-2px)}
+.button:active{transform:translateY(0) scale(.97);transition-duration:.08s}
+.links a{position:relative;transition:color .2s var(--ease)}
+.links a::after{content:'';position:absolute;left:0;bottom:-3px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.links a:hover::after{transform:scaleX(1)}
+.links a:hover{text-decoration:none;color:var(--deep)}
+.how-card{will-change:transform;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease)}
+.how-card:hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(40,55,35,.09);border-color:#cdd7c9}
+.model-choice{transition:transform .28s var(--ease),border-color .2s var(--ease),background .2s var(--ease)}
+.model-choice:hover{transform:translateY(-2px)}
+.segmented button{transition:background .2s var(--ease),color .2s var(--ease),box-shadow .2s var(--ease),transform .15s var(--ease)}
+.segmented button:active{transform:scale(.98)}
+.science-links a{transition:padding .25s var(--ease),color .2s var(--ease),background .25s var(--ease)}
+.science-links a:hover{padding-left:6px;padding-right:6px}
+.figure{transition:transform .35s var(--ease)}
+.figure:hover{transform:translateY(-2px)}
+.metric{transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.metric:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(40,55,35,.06)}
+.item-row{transition:background .25s var(--ease),border-color .25s var(--ease)}
+.item-row:hover{background:#f1f4ea;border-color:#d8e0d1}
+.remove{transition:color .2s var(--ease),transform .2s var(--ease)}
+.remove:hover{color:#a34331;transform:scale(1.15)}
+.add-btn{transition:background .25s var(--ease),border-color .25s var(--ease),transform .2s var(--ease)}
+.add-btn:hover{background:#e6efe3;border-color:var(--green)}
+.add-btn:active{transform:scale(.99)}
+.field select,.field input{transition:border-color .2s var(--ease),box-shadow .2s var(--ease),background .2s var(--ease)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.06s}
+.reveal-d2{transition-delay:.13s}
+.reveal-d3{transition-delay:.2s}
+.hero-chip{will-change:transform}
+.hero-chip.left{animation:float-a 7s ease-in-out infinite}
+.hero-chip.right{animation:float-b 8s ease-in-out infinite}
+@keyframes float-a{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes float-b{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+.callout{position:relative;overflow:hidden}
+.callout::before{content:'';position:absolute;inset:-40%;background:radial-gradient(circle at 30% 30%,rgba(226,229,184,.22),transparent 55%);pointer-events:none;animation:drift 14s ease-in-out infinite alternate}
+.callout>*{position:relative;z-index:1}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}100%{transform:translate(6%,-4%) scale(1.15)}}
+.site-notice{transition:background .3s var(--ease),border-color .3s var(--ease)}
+.site-notice:hover{background:#eaeee2;border-color:#d5ddce}
+.status{transition:background .3s var(--ease),color .3s var(--ease)}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .hero-chip.left,.hero-chip.right{animation:none}
+  .callout::before{animation:none}
+  .button,.how-card,.model-choice,.figure,.metric,.science-links a{transition:none}
+}
 </style></head>
 <body><header class="topbar"><div class="container topbar-inner"><a class="logo" href="/"><span class="logo-icon">❧</span>Face &amp; Body Twin</a><nav class="links" aria-label="Main navigation"><a href="/">Home</a><a href="/#how">How it works</a><a href="/#science">Research</a></nav><a class="button small" aria-current="page" href="/studio/">Studio ↗</a></div></header>
 <main><div class="container studio-page-intro"><div class="eyebrow">INTERACTIVE EXPERIENCE</div><h1>Make curiosity <em>visible.</em></h1><p>Explore a possible scenario with a ready-made model or your own photo. First we calculate what is known about the food, then show a clearly labeled illustration and practical context.</p><div class="site-notice">Prototype mode: the current visual preview is not produced by YouCam AI. Face examples use a subtle local display effect; Body examples use illustrative silhouettes. Source-based nutrition calculations work independently of image effects.</div></div><section class="section container" id="studio"><div class="section-header"><div><div class="eyebrow">YOUR INTERACTIVE STUDIO</div><h2>Explore the possible.</h2></div><p>Start with a demo model or your own photo. Select foods and quantities. We’ll calculate what’s known and show a clearly labeled, illustrative scenario.</p></div>
@@ -70,8 +121,6 @@ footer{background:#efeee7;border-top:1px solid #deddd3}
 </div></section></main>
 <footer><div class="container footer-inner"><div><a class="logo" href="/"><span class="logo-icon">❧</span>Face &amp; Body Twin</a><p>Educational visual exploration, not medical advice. Photos stay in your browser in this prototype. Effects are illustrations, not personal forecasts.</p></div><div class="footer-meta"><a href="/">← Back to home</a><br>© 2026 Face &amp; Body Twin</div></div></footer>
 <script>
-// PRODUCT CATALOG — all mass values are normalized to one base serving.
-// null means unavailable and must never be silently treated as a measured zero.
 const CATALOG={
   cola:{name:'Coca-Cola Original · Kazakhstan',unit:'can',units:{can:1},serving:'330 ml can',sugar:35,kcal:139,sodium:null,kind:'drink',source:'https://www.coca-cola.com/kz/ru/about-us/faq/how-much-sugar-is-contained-in-the-coca-cola-can'},
   salt:{name:'Table salt',unit:'g',units:{g:1,tsp:6,tbsp:18},serving:'1 g',sugar:0,kcal:0,sodium:400,kind:'salt',source:'https://www.who.int/news-room/fact-sheets/detail/sodium-reduction'},
@@ -161,4 +210,14 @@ $('addFood').addEventListener('click',addFood);
 $('generate').addEventListener('click',renderResult);
 $('photoInput').addEventListener('change',e=>{const file=e.target.files&&e.target.files[0];if(!file)return;if(!['image/jpeg','image/png','image/webp'].includes(file.type)){showError('Choose a JPG, PNG or WebP photo.');return}if(file.size>8*1024*1024){showError('Choose a photo smaller than 8 MB.');return}if(state.photoUrl)URL.revokeObjectURL(state.photoUrl);state.photo=file;state.photoUrl=URL.createObjectURL(file);setModel('upload');$('photoName').textContent=`${file.name} selected. Photo is local to this browser; no network upload occurs in this demo.`;showError('')});
 renderThumbs();updateUnits();
-</script></body></html>
+</script>
+<script>
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const revealTargets=[...document.querySelectorAll('.section-header'),...document.querySelectorAll('.how-card'),...document.querySelectorAll('.science-links a'),...document.querySelectorAll('.callout')];
+  revealTargets.forEach((el,i)=>{el.classList.add('reveal');const d=i%4;if(d===1)el.classList.add('reveal-d1');else if(d===2)el.classList.add('reveal-d2');else if(d===3)el.classList.add('reveal-d3')});
+  const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+  revealTargets.forEach(el=>io.observe(el));
+})();
+</script>
+</body></html>
