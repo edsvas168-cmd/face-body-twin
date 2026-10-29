@@ -1,41 +1,50 @@
-# Face & Body Twin — version 0.3
+# Face & Body Twin — Studio 0.4 (локальная версия)
 
-This update uses the warm editorial look approved for the project: ivory/beige canvas, forest-green highlights, large readable typography, and **two original AI-generated illustrative Before/Possible Scenario comparisons** for Face Twin and Body Twin.
+Обновление существующего проекта 0.3. Главная `/` остаётся информационной; редактор находится в `/studio/`. Сборка и дополнительные npm-пакеты не нужны. Публикация на Vercel и отправка в GitHub не выполнялись.
 
-The website has **two separate pages**:
+## Запуск
 
-- `/` (`index.html`) — informational landing page, purpose/benefits, how it works, research, FAQ; English default with RU translation toggle.
-- `/studio/` (`studio/index.html`) — existing interactive nutrition & scenario prototype, preserved and visually harmonized with the new homepage. Studio interface remains in English.
+Из корня проекта: `python -m http.server 8765 --bind 127.0.0.1`, затем `http://127.0.0.1:8765/studio/`.
+Проверки: `node tests/nutrition.test.mjs`. ES-модули требуют HTTP; открытие HTML через `file://` не поддерживается.
 
-## Install on GitHub and deploy automatically to Vercel
+## Что работает
 
-**Keep the folders.** Upload the contents of this archive to the root of `edsvas168-cmd/face-body-twin` on branch `main`:
+- Пять шагов; карточка продуктов занимает центральную широкую область, результат расположен ниже.
+- EN/RU, Face/Body, женские и мужские персонажи четырёх взрослых возрастных групп.
+- 8 оригинальных AI-аватаров в `assets/avatars/`; лицо и тело используют один исходник. Портрет кадрируется во время отображения, отдельных портретных файлов нет.
+- Сохранение режима, пола, возраста и языка в localStorage; фото и пищевые записи не сохраняются.
+- Добавление/удаление продуктов, исходные единицы и значения каталога, расчёты сахара, энергии, натрия и приблизительного солевого эквивалента.
+- Неизвестные значения и неполные суммы явно обозначены. При полностью неизвестном нутриенте отображается «Нет данных», а не 0.
+- Проверки ввода и совокупных экстремальных количеств, подтверждение 18+ и образовательного назначения.
+- Натриевый сценарий выбирает фиксированный умеренный Canvas-эффект. Ползунок показывает части двух изображений и не управляет силой эффекта. Сахарный/нейтральный сценарий оставляет изображение неизменным.
+- Локальная загрузка JPG/PNG/WebP до 8 МБ и 24 Мп, проверка декодирования, удаление фото. Фото не стилизуется и не меняется; запросов в YouCam нет.
+- Объяснения, рекомендации, ограничения длительности и ссылки сохранены.
 
-```
-index.html
-studio/index.html
-assets/face-comparison.webp
-assets/body-comparison.webp
-assets/food-balanced.webp
-assets/food-fastfood.webp
-assets/food-soda.webp
-assets/food-sugar.webp
-assets/woman-portrait.webp
-assets/man-portrait.webp
-assets/editorial-duo.webp
-README.md
-CODEX_TASK.md
-```
+## Модули
 
-The repo can be deployed by Vercel preset `Other` with no build step. `studio/index.html` is automatically served at `/studio/`.
+- `studio/modules/catalog.mjs`: перенесённые без изменения исходные пищевые значения и ссылки.
+- `nutrition.mjs`: проверяемая арифметика отдельно от правил выбора сценария; пороги блокировки из 0.3 не являются медицинскими порогами.
+- `avatars.mjs`: реестр изображений, параметры кадрирования и расширяемые возрастные группы.
+- `renderer.mjs`: обратное отображение пикселей Canvas без сторонних библиотек; управляемые зоны щёк, нижней части лица, талии, живота и силуэта. Возможности области под глазами и оттенка кожи предусмотрены, но выключены в пищевых сценариях.
+- `i18n.mjs`: интерфейс и образовательные объяснения EN/RU.
+- `youcam.mjs`: отдельный интерфейс будущей интеграции, сейчас честно возвращает YOUCAM_NOT_CONFIGURED.
 
-**Important GitHub tip:** dragging a folder can sometimes flatten it. Check the displayed paths *before* committing. If it shows `face-comparison.webp` in the root instead of `assets/face-comparison.webp`, cancel and enter the existing `assets` folder, then upload images from within that folder. Replace root `index.html` separately and `studio/index.html` from within the `studio` folder.
+## Реализация визуализации
 
-This update contains no API keys and does not alter the nutrition calculation JavaScript. Existing YouCam integration is **not** included. The Studio uses demonstration imagery and local effects rather than true AI face/body processing. The source illustrations on the homepage were generated for this project; they do not depict validated physiological predictions.
+Для статического MVP выбрана локальная 2D-деформация оригинального изображения: одна и та же личность, поза, одежда и свет до/после. Сила ограничена в коде и не является формулой реакции на еду. Это не полноценная вращаемая 3D-модель, не распознавание лица и не физиологическая симуляция. Three.js/morph targets потребовали бы отдельных rigged 3D-моделей и разработки конвейера; для этого этапа библиотека не добавлялась. Canvas API: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
 
-## Helpful next steps
+Возрастные диапазоны задаются данными: для расширения добавьте новые группы и соответствующие изображения. Сам UI переписывать не требуется. Для чужих изображений координаты локальных зон необходимо отдельно калибровать.
 
-1. Visually inspect mobile and desktop after Vercel deploy.
-2. Verify all `/assets/...` images load (no 404), and `/studio/` works.
-3. Verify food calculations with the existing test examples in `CODEX_TASK.md`.
-4. Connect YouCam only after confirming supported parameters, secure server-side key handling, image consent, and provider data retention.
+## Достоверность данных и следующий этап
+
+Coca-Cola KZ (35 г сахара, 139 ккал / 330 мл) и ориентиры ВОЗ сверены 29.10.2026. Натрий Coca-Cola неизвестен. Значения сахара-песка, чизбургера и фри сохранены из 0.3 и явно отмечены как не прошедшие повторную проверку. До публичного демо нужны конкретные записи USDA/этикетки, рынок, дата проверки и подтверждённые порции для этих продуктов; существующие ссылки не удалены.
+
+YouCam потребует серверного адаптера с ключом в переменных окружения, подтверждённых endpoint и параметров аккаунта, отдельного согласия на внешнюю передачу, политики хранения/удаления, обработки task ID, тайм-аутов и ошибок. Face и Body нужно проверить отдельно на реальных тестовых запросах. В этой версии нет мнимых успешных AI-ответов и нет ключей.
+
+Исходная главная сохранена по структуре и стилю; убраны декоративные стрелки и уточнено описание режима фото.
+
+## Новая приоритетная архитектура — YouCam для аватаров
+
+По запросу от 29.10.2026 планируется использовать YouCam для оригинальных игровых персонажей как основной путь, а личное фото оставить дополнительным. Условие переключения — успешные реальные тесты Face Reshape, затем Body Reshape на женском и мужском аватарах. На текущем этапе пользователь выбрал **протокол без запуска**: поддержка аватаров не подтверждена, запросов обработки нет, текущий локальный движок не переключён.
+
+Подробный порядок, параметры, бюджет units, критерии качества и план файлов: [протокол YouCam](docs/youcam/PROTOCOL_RU.md). Машиночитаемые конфигурации и пустой журнал результатов находятся рядом. Результат неудачного YouCam-запроса никогда не будет автоматически заменяться Canvas-генерацией.
