@@ -94,7 +94,7 @@
         if(totals.hasUnknownSodium){reason='Some foods have unknown sodium; totals are partial. Visual mapping is disabled.';}
         else if(tier==='none'){reason='Computed intensity is below the first visual preset.';}
         else {apiKind='face-reshape';parameters=v.features;reason='Derived from known sodium using an illustrative, capped mapping.';}
-      }else{kind='neutral';reason=totals.hasUnknownSodium?'Sodium information is incomplete, so no precise salt mapping is available.':'No supported appearance-change mapping for this combination.';}
+      }else if(totals.sugar>=15){kind='sugar';reason='Sugar data can be summarized, but no validated one-meal-to-acne API mapping is available.';}else{kind='neutral';reason=totals.hasUnknownSodium?'Sodium information is incomplete, so no precise salt mapping is available.':'No supported appearance-change mapping for this combination.';}
     }else{reason='No verified adverse-skin API effect for this scenario.';}
     const apiEligible=Boolean(apiKind&&!risky);
     return {kind,scenarioId:scenarioId||null,totals,risky,apiKind,apiEligible,parameters,intensity,tier,reason,explanation:DESCRIPTIONS[kind]||'Illustrative information; not an individualized physiological forecast.'};
