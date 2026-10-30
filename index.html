@@ -241,6 +241,7 @@ a:hover>.brand-symbol{transform:rotate(0deg)}
 .business-head{display:flex;align-items:end;justify-content:space-between;gap:32px;margin-bottom:38px}.business-eyebrow{font:600 11px Sora,sans-serif;text-transform:uppercase;letter-spacing:.16em;color:#c8f55f;margin-bottom:15px}.business-head h2{font:700 clamp(32px,4vw,56px)/1.08 Sora,sans-serif;letter-spacing:-.05em;max-width:750px;margin:0}.business-head h2 em{font-style:normal;color:#c8f55f}.business-head p{font:14px/1.8 Inter,sans-serif;color:#b9c8bb;max-width:350px;margin:0}
 .business-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.business-tile{border:1px solid #315341;border-radius:20px;padding:28px;background:linear-gradient(145deg,#143623,#0d2619);min-height:235px;display:flex;flex-direction:column;align-items:flex-start}.business-number{font:600 11px Sora,sans-serif;color:#c8f55f;letter-spacing:.13em}.business-tile h3{font:600 21px Sora,sans-serif;letter-spacing:-.04em;color:#fff;margin:31px 0 10px}.business-tile p{font:13px/1.75 Inter,sans-serif;color:#b9c8bb;margin:0}.business-foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;padding-top:26px}.business-foot span{color:#a8b8aa;font:12px/1.6 Inter,sans-serif}.business-foot a{color:#c8f55f;text-decoration:underline;text-underline-offset:4px;font:600 13px Sora,sans-serif}
 @media(max-width:800px){.business-section{padding:72px 0}.business-head{display:block}.business-head p{margin-top:20px}.business-grid{grid-template-columns:1fr}.business-tile{min-height:auto;padding:25px}.business-tile h3{margin-top:20px}}
+.lang{display:flex;gap:3px;align-items:center}.lang button{white-space:nowrap}.header-actions{min-width:0}@media(max-width:600px){.lang button{padding:6px 7px;font-size:10px}.header-actions{gap:8px}.header-actions .btn{padding:9px 11px;font-size:11px}}
 </style>
 </head>
 <body>
@@ -249,19 +250,19 @@ a:hover>.brand-symbol{transform:rotate(0deg)}
   <div class="shell header-inner">
     <a class="brand" href="/"><span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 40 40" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="19" r="9" stroke="currentColor" stroke-width="3"/><circle cx="25" cy="21" r="9" stroke="currentColor" stroke-width="3"/><path d="M20 7v5M17.5 9.5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span>Face &amp; Body Twin</span></a>
     <nav class="nav">
-      <a href="#top" class="active" data-en="Home" data-ru="Главная">Home</a>
-      <a href="#how" data-en="How it works" data-ru="Как работает">How it works</a>
-      <a href="#science" data-en="Science" data-ru="Наука">Science</a>
-      <a href="#benefits" data-en="Benefits" data-ru="Возможности">Benefits</a>
-      <a href="#business" data-en="For Business" data-ru="Для бизнеса">For Business</a>
+      <a href="#top" class="active" data-en="Home" data-ru="Главная" data-es="Inicio" data-zh="首页">Home</a>
+      <a href="#how" data-en="How it works" data-ru="Как работает" data-es="Cómo funciona" data-zh="工作原理">How it works</a>
+      <a href="#science" data-en="Science" data-ru="Наука" data-es="Ciencia" data-zh="科学依据">Science</a>
+      <a href="#benefits" data-en="Benefits" data-ru="Возможности" data-es="Ventajas" data-zh="产品优势">Benefits</a>
+      <a href="#business" data-en="For Business" data-ru="Для бизнеса" data-es="Para empresas" data-zh="商务合作">For Business</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="header-actions">
       <div class="lang" role="group" aria-label="Language">
         <button id="enButton" class="selected" type="button">EN</button>
-        <button id="ruButton" type="button">RU</button>
+        <button id="ruButton" type="button">RU</button><button id="esButton" type="button">ES</button><button id="zhButton" type="button">中文</button>
       </div>
-      <a class="btn btn-primary" href="/studio/"><span data-en="Open Studio" data-ru="Открыть Studio">Open Studio</span></a>
+      <a class="btn btn-primary" href="/studio/"><span data-en="Open Studio" data-ru="Открыть Studio" data-es="Abrir Studio" data-zh="进入 Studio">Open Studio</span></a>
     </div>
   </div>
 </header>
@@ -271,30 +272,30 @@ a:hover>.brand-symbol{transform:rotate(0deg)}
   <div class="shell">
     <div class="hero-grid">
       <div class="hero-copy">
-        <div class="hero-eyebrow" data-en="Illustrative visual explorer" data-ru="Иллюстративная визуализация">Illustrative visual explorer</div>
-        <h1 data-en="See your food.<br>See your <em>reflection.</em>" data-ru="Посмотри на еду.<br>Увидь своё <em>отражение.</em>">See your food.<br>See your <em>reflection.</em></h1>
-        <p data-en="Face &amp; Body Twin helps you explore how everyday food choices may relate to your appearance — with clear numbers, honest science and visual scenarios that never pretend to be a medical forecast." data-ru="Face &amp; Body Twin помогает увидеть, как повседневные пищевые привычки могут отражаться на внешности — с точными цифрами, честной наукой и визуальными сценариями, которые не выдают себя за медицинский прогноз.">Face &amp; Body Twin helps you explore how everyday food choices may relate to your appearance — with clear numbers, honest science and visual scenarios that never pretend to be a medical forecast.</p>
+        <div class="hero-eyebrow" data-en="Illustrative visual explorer" data-ru="Иллюстративная визуализация" data-es="Explorador visual ilustrativo" data-zh="示意性视觉探索">Illustrative visual explorer</div>
+        <h1 data-en="See your food.<br>See your <em>reflection.</em>" data-ru="Посмотри на еду.<br>Увидь своё <em>отражение.</em>" data-es="Mira tu comida. Mira tu <em>reflejo.</em>" data-zh="看见饮食，看见<em>自己的变化。</em>">See your food.<br>See your <em>reflection.</em></h1>
+        <p data-en="Face &amp; Body Twin helps you explore how everyday food choices may relate to your appearance — with clear numbers, honest science and visual scenarios that never pretend to be a medical forecast." data-ru="Face &amp; Body Twin помогает увидеть, как повседневные пищевые привычки могут отражаться на внешности — с точными цифрами, честной наукой и визуальными сценариями, которые не выдают себя за медицинский прогноз." data-es="Face &amp; Body Twin te ayuda a explorar cómo la alimentación puede relacionarse con tu apariencia, mediante ejemplos visuales y explicaciones responsables." data-zh="Face &amp; Body Twin 帮助你探索饮食习惯与外貌之间可能存在的联系，并提供清晰、审慎的视觉说明。">Face &amp; Body Twin helps you explore how everyday food choices may relate to your appearance — with clear numbers, honest science and visual scenarios that never pretend to be a medical forecast.</p>
         <div class="hero-ctas">
-          <a href="/studio/" class="btn btn-primary"><span data-en="Try the Studio" data-ru="Открыть Studio">Try the Studio</span></a>
-          <a href="#how" class="btn btn-ghost"><span data-en="How it works" data-ru="Как это работает">How it works</span></a>
+          <a href="/studio/" class="btn btn-primary"><span data-en="Try the Studio" data-ru="Открыть Studio" data-es="Probar Studio" data-zh="体验 Studio">Try the Studio</span></a>
+          <a href="#how" class="btn btn-ghost"><span data-en="How it works" data-ru="Как это работает" data-es="Cómo funciona" data-zh="工作原理">How it works</span></a>
         </div>
-        <div class="hero-note"><span aria-hidden="true">ⓘ</span><span data-en="For education and visual exploration. Before/after examples illustrate possibilities, not guaranteed effects of a meal." data-ru="Образовательная визуализация. Примеры «до/после» показывают возможные сценарии, а не гарантированные последствия приёма пищи.">For education and visual exploration. Before/after examples illustrate possibilities, not guaranteed effects of a meal.</span></div>
+        <div class="hero-note"><span aria-hidden="true">ⓘ</span><span data-en="For education and visual exploration. Before/after examples illustrate possibilities, not guaranteed effects of a meal." data-ru="Образовательная визуализация. Примеры «до/после» показывают возможные сценарии, а не гарантированные последствия приёма пищи." data-es="Con fines educativos. Las imágenes de antes y después ilustran posibilidades, no efectos garantizados." data-zh="仅供教育及视觉探索。前后对比仅为示意，不代表单次饮食必然产生的效果。">For education and visual exploration. Before/after examples illustrate possibilities, not guaranteed effects of a meal.</span></div>
       </div>
       <div class="hero-visual">
         <article class="hero-card hero-card-a">
           <img src="/assets/face-comparison.webp" alt="Illustrative face comparison" fetchpriority="high">
           <span class="card-tag">FACE TWIN</span>
-          <div class="card-labels"><span data-en="Original" data-ru="До">Original</span><span data-en="Possible" data-ru="Возможно">Possible</span></div>
+          <div class="card-labels"><span data-en="Original" data-ru="До" data-es="Original" data-zh="原始状态">Original</span><span data-en="Possible" data-ru="Возможно" data-es="Posible" data-zh="可能变化">Possible</span></div>
         </article>
         <article class="hero-card hero-card-b">
           <img src="/assets/body-comparison.webp" alt="Illustrative body comparison" fetchpriority="high">
           <span class="card-tag">BODY TWIN</span>
-          <div class="card-labels"><span data-en="Original" data-ru="До">Original</span><span data-en="Possible" data-ru="Возможно">Possible</span></div>
+          <div class="card-labels"><span data-en="Original" data-ru="До" data-es="Original" data-zh="原始状态">Original</span><span data-en="Possible" data-ru="Возможно" data-es="Posible" data-zh="可能变化">Possible</span></div>
         </article>
         <div class="hero-meta">
-          <span><strong>100%</strong> <span data-en="honest" data-ru="честно">honest</span></span>
+          <span><strong>100%</strong> <span data-en="honest" data-ru="честно" data-es="responsable" data-zh="审慎">honest</span></span>
           <span>•</span>
-          <span data-en="No medical claims" data-ru="Без медицинских обещаний">No medical claims</span>
+          <span data-en="No medical claims" data-ru="Без медицинских обещаний" data-es="Sin afirmaciones médicas" data-zh="不作医疗承诺">No medical claims</span>
         </div>
       </div>
     </div>
@@ -312,35 +313,35 @@ a:hover>.brand-symbol{transform:rotate(0deg)}
   <div class="shell">
     <div class="section-head">
       <div>
-        <div class="section-eyebrow" data-en="Why it matters" data-ru="Зачем это нужно">Why it matters</div>
-        <h2 data-en="What can you <em>actually explore?</em>" data-ru="Что ты <em>на самом деле увидишь?</em>">What can you <em>actually explore?</em></h2>
+        <div class="section-eyebrow" data-en="Why it matters" data-ru="Зачем это нужно" data-es="Por qué importa" data-zh="为什么重要">Why it matters</div>
+        <h2 data-en="What can you <em>actually explore?</em>" data-ru="Что ты <em>на самом деле увидишь?</em>" data-es="¿Qué puedes <em>explorar?</em>" data-zh="你可以<em>探索什么？</em>">What can you <em>actually explore?</em></h2>
       </div>
-      <p data-en="A clearer way to connect food, appearance and everyday wellbeing — without turning a visual into a medical claim." data-ru="Наглядный способ понять возможные связи между питанием, внешностью и самочувствием — без медицинских обещаний.">A clearer way to connect food, appearance and everyday wellbeing — without turning a visual into a medical claim.</p>
+      <p data-en="A clearer way to connect food, appearance and everyday wellbeing — without turning a visual into a medical claim." data-ru="Наглядный способ понять возможные связи между питанием, внешностью и самочувствием — без медицинских обещаний." data-es="Una forma clara de conectar alimentación, apariencia y bienestar, sin confundir las imágenes con diagnósticos." data-zh="更直观地了解饮食、外貌与日常健康之间的联系，同时避免将示意图当作医学结论。">A clearer way to connect food, appearance and everyday wellbeing — without turning a visual into a medical claim.</p>
     </div>
     <div class="benefits">
       <article class="benefit">
         <span class="benefit-num">01</span>
         <div class="benefit-icon">◌</div>
-        <h3 data-en="Possible face changes" data-ru="Возможные изменения лица">Possible face changes</h3>
-        <p data-en="Explore illustrations of mild puffiness and skin-related scenarios — clearly labeled as illustrative." data-ru="Иллюстрации возможной лёгкой отёчности и изменений кожи — с явной маркировкой.">Explore illustrations of mild puffiness and skin-related scenarios — clearly labeled as illustrative.</p>
+        <h3 data-en="Possible face changes" data-ru="Возможные изменения лица" data-es="Cambios posibles en el rostro" data-zh="可能的面部变化">Possible face changes</h3>
+        <p data-en="Explore illustrations of mild puffiness and skin-related scenarios — clearly labeled as illustrative." data-ru="Иллюстрации возможной лёгкой отёчности и изменений кожи — с явной маркировкой." data-es="Explora ejemplos ilustrativos de hinchazón leve y escenarios relacionados con la piel." data-zh="探索轻微浮肿及皮肤相关情景的示意效果。">Explore illustrations of mild puffiness and skin-related scenarios — clearly labeled as illustrative.</p>
       </article>
       <article class="benefit">
         <span class="benefit-num">02</span>
         <div class="benefit-icon">♧</div>
-        <h3 data-en="Possible body changes" data-ru="Возможные изменения тела">Possible body changes</h3>
-        <p data-en="Consider fluid balance and body-related visual scenarios without exact-body predictions." data-ru="Примеры, связанные с балансом жидкости и внешним видом тела, без точного прогноза.">Consider fluid balance and body-related visual scenarios without exact-body predictions.</p>
+        <h3 data-en="Possible body changes" data-ru="Возможные изменения тела" data-es="Cambios posibles en el cuerpo" data-zh="可能的身体变化">Possible body changes</h3>
+        <p data-en="Consider fluid balance and body-related visual scenarios without exact-body predictions." data-ru="Примеры, связанные с балансом жидкости и внешним видом тела, без точного прогноза." data-es="Explora el equilibrio de líquidos sin predicciones corporales exactas." data-zh="了解水分平衡与身体外观的相关情景，而非精确预测。">Consider fluid balance and body-related visual scenarios without exact-body predictions.</p>
       </article>
       <article class="benefit">
         <span class="benefit-num">03</span>
         <div class="benefit-icon">▤</div>
-        <h3 data-en="Science, simply explained" data-ru="Наука простыми словами">Science, simply explained</h3>
-        <p data-en="Read plain-language context with links to trustworthy research and guidance." data-ru="Понятные объяснения и ссылки на научные и медицинские источники.">Read plain-language context with links to trustworthy research and guidance.</p>
+        <h3 data-en="Science, simply explained" data-ru="Наука простыми словами" data-es="Ciencia explicada fácilmente" data-zh="通俗易懂的科学">Science, simply explained</h3>
+        <p data-en="Read plain-language context with links to trustworthy research and guidance." data-ru="Понятные объяснения и ссылки на научные и медицинские источники." data-es="Contexto sencillo con enlaces a investigaciones fiables." data-zh="阅读简明说明及可信研究来源。">Read plain-language context with links to trustworthy research and guidance.</p>
       </article>
       <article class="benefit">
         <span class="benefit-num">04</span>
         <div class="benefit-icon">♡</div>
-        <h3 data-en="Practical guidance" data-ru="Практические советы">Practical guidance</h3>
-        <p data-en="Learn gentle, sensible steps and why the duration of an effect can vary." data-ru="Безопасные советы и информация о том, почему длительность эффекта может различаться.">Learn gentle, sensible steps and why the duration of an effect can vary.</p>
+        <h3 data-en="Practical guidance" data-ru="Практические советы" data-es="Consejos prácticos" data-zh="实用建议">Practical guidance</h3>
+        <p data-en="Learn gentle, sensible steps and why the duration of an effect can vary." data-ru="Безопасные советы и информация о том, почему длительность эффекта может различаться." data-es="Ideas sensatas y razones por las que la duración de los efectos puede variar." data-zh="了解温和、合理的建议以及效果持续时间为何因人而异。">Learn gentle, sensible steps and why the duration of an effect can vary.</p>
       </article>
     </div>
   </div>
@@ -350,16 +351,16 @@ a:hover>.brand-symbol{transform:rotate(0deg)}
   <div class="shell">
     <div class="section-head">
       <div>
-        <div class="section-eyebrow" data-en="A simple experience" data-ru="Простой путь">A simple experience</div>
-        <h2 data-en="From food to <em>visual insight.</em>" data-ru="От еды — <em>к наглядному результату.</em>">From food to <em>visual insight.</em></h2>
+        <div class="section-eyebrow" data-en="A simple experience" data-ru="Простой путь" data-es="Una experiencia sencilla" data-zh="简单的体验">A simple experience</div>
+        <h2 data-en="From food to <em>visual insight.</em>" data-ru="От еды — <em>к наглядному результату.</em>" data-es="De los alimentos a una <em>perspectiva visual.</em>" data-zh="从饮食到<em>视觉洞察。</em>">From food to <em>visual insight.</em></h2>
       </div>
-      <p data-en="Explore a hypothetical meal or enter what you actually ate. No photo is required to try the demo." data-ru="Попробуй воображаемый сценарий или укажи то, что действительно съел. Загружать фото необязательно.">Explore a hypothetical meal or enter what you actually ate. No photo is required to try the demo.</p>
+      <p data-en="Explore a hypothetical meal or enter what you actually ate. No photo is required to try the demo." data-ru="Попробуй воображаемый сценарий или укажи то, что действительно съел. Загружать фото необязательно." data-es="Explora una comida hipotética o lo que has comido. No necesitas subir una foto para probar la demo." data-zh="可以探索假设的饮食情景，也可以输入实际吃过的食物。体验演示无需上传照片。">Explore a hypothetical meal or enter what you actually ate. No photo is required to try the demo.</p>
     </div>
     <div class="steps">
-      <article class="step"><div class="step-num">01</div><h3 data-en="Add your food" data-ru="Выбери продукты">Add your food</h3><p data-en="Select foods, portions and combinations. Known nutrients are calculated from source data." data-ru="Укажи продукты, порции и сочетания. Известные нутриенты рассчитаются по данным источников.">Select foods, portions and combinations. Known nutrients are calculated from source data.</p></article>
-      <article class="step"><div class="step-num">02</div><h3 data-en="Choose a model" data-ru="Выбери модель">Choose a model</h3><p data-en="Use a prepared female or male model, or preview your own photo locally." data-ru="Используй готовую женскую или мужскую модель либо своё фото (локально).">Use a prepared female or male model, or preview your own photo locally.</p></article>
-      <article class="step"><div class="step-num">03</div><h3 data-en="See a possible scenario" data-ru="Посмотри возможный сценарий">See a possible scenario</h3><p data-en="Explore a clearly labeled visual example — not a personal forecast or medical result." data-ru="Посмотри наглядный пример с обозначением, что это не диагноз и не персональный прогноз.">Explore a clearly labeled visual example — not a personal forecast or medical result.</p></article>
-      <article class="step"><div class="step-num">04</div><h3 data-en="Read the context" data-ru="Узнай больше">Read the context</h3><p data-en="Find practical tips, timing notes, limitations and links to supporting materials." data-ru="Прочитай рекомендации, возможные сроки, ограничения и материалы исследований.">Find practical tips, timing notes, limitations and links to supporting materials.</p></article>
+      <article class="step"><div class="step-num">01</div><h3 data-en="Add your food" data-ru="Выбери продукты" data-es="Añade alimentos" data-zh="添加食物">Add your food</h3><p data-en="Select foods, portions and combinations. Known nutrients are calculated from source data." data-ru="Укажи продукты, порции и сочетания. Известные нутриенты рассчитаются по данным источников." data-es="Elige productos, porciones y combinaciones. Calculamos los nutrientes disponibles." data-zh="选择食物、份量和组合。根据参考数据计算已知营养成分。">Select foods, portions and combinations. Known nutrients are calculated from source data.</p></article>
+      <article class="step"><div class="step-num">02</div><h3 data-en="Choose a model" data-ru="Выбери модель" data-es="Elige un modelo" data-zh="选择模特">Choose a model</h3><p data-en="Use a prepared female or male model, or preview your own photo locally." data-ru="Используй готовую женскую или мужскую модель либо своё фото (локально)." data-es="Usa un modelo preparado o previsualiza tu foto de forma local." data-zh="使用预设男女模特，或仅在本地预览个人照片。">Use a prepared female or male model, or preview your own photo locally.</p></article>
+      <article class="step"><div class="step-num">03</div><h3 data-en="See a possible scenario" data-ru="Посмотри возможный сценарий" data-es="Explora un escenario posible" data-zh="查看可能的情景">See a possible scenario</h3><p data-en="Explore a clearly labeled visual example — not a personal forecast or medical result." data-ru="Посмотри наглядный пример с обозначением, что это не диагноз и не персональный прогноз." data-es="Un ejemplo visual etiquetado claramente, no una predicción personal." data-zh="查看明确标注的示意效果，并非个人健康预测。">Explore a clearly labeled visual example — not a personal forecast or medical result.</p></article>
+      <article class="step"><div class="step-num">04</div><h3 data-en="Read the context" data-ru="Узнай больше" data-es="Lee el contexto" data-zh="了解背景信息">Read the context</h3><p data-en="Find practical tips, timing notes, limitations and links to supporting materials." data-ru="Прочитай рекомендации, возможные сроки, ограничения и материалы исследований." data-es="Consejos, duración, limitaciones y fuentes de referencia." data-zh="查看建议、时间说明、局限性和参考资料。">Find practical tips, timing notes, limitations and links to supporting materials.</p></article>
     </div>
   </div>
 </section>
@@ -368,34 +369,34 @@ a:hover>.brand-symbol{transform:rotate(0deg)}
   <div class="shell">
     <div class="science-grid">
       <div class="science-left">
-        <div class="section-eyebrow" data-en="The science behind the questions" data-ru="Наука за визуализацией">The science behind the questions</div>
-        <h2 data-en="Research to explore. <em>Not promises to make.</em>" data-ru="Исследования, которые помогают понять. <em>Не обещания.</em>">Research to explore. <em>Not promises to make.</em></h2>
-        <p data-en="Sodium contributes to fluid balance, and certain eating patterns may be associated with acne. But a study about general patterns cannot predict how your individual face will change after one meal." data-ru="Натрий участвует в балансе жидкости, а некоторые типы питания могут быть связаны с акне. Но исследования общих закономерностей не дают точного прогноза изменения лица после одного приёма пищи.">Sodium contributes to fluid balance, and certain eating patterns may be associated with acne. But a study about general patterns cannot predict how your individual face will change after one meal.</p>
-        <div class="science-note" data-en="Images on this page are original AI-generated illustrations. Current Studio previews are demonstrations, not real YouCam transformations." data-ru="Изображения на этой странице специально созданы с помощью ИИ. В Studio пока демонстрационные превью, а не настоящая обработка через YouCam.">Images on this page are original AI-generated illustrations. Current Studio previews are demonstrations, not real YouCam transformations.</div>
+        <div class="section-eyebrow" data-en="The science behind the questions" data-ru="Наука за визуализацией" data-es="La ciencia detrás de las preguntas" data-zh="问题背后的科学">The science behind the questions</div>
+        <h2 data-en="Research to explore. <em>Not promises to make.</em>" data-ru="Исследования, которые помогают понять. <em>Не обещания.</em>" data-es="Investigación para explorar. <em>No promesas.</em>" data-zh="探索研究，<em>不作保证。</em>">Research to explore. <em>Not promises to make.</em></h2>
+        <p data-en="Sodium contributes to fluid balance, and certain eating patterns may be associated with acne. But a study about general patterns cannot predict how your individual face will change after one meal." data-ru="Натрий участвует в балансе жидкости, а некоторые типы питания могут быть связаны с акне. Но исследования общих закономерностей не дают точного прогноза изменения лица после одного приёма пищи." data-es="El sodio influye en el equilibrio de líquidos y ciertos hábitos alimentarios pueden relacionarse con el acné. Las investigaciones generales no permiten predecir tu rostro." data-zh="钠与体液平衡有关，某些饮食模式也可能与痤疮相关。但群体研究不能预测个人外貌变化。">Sodium contributes to fluid balance, and certain eating patterns may be associated with acne. But a study about general patterns cannot predict how your individual face will change after one meal.</p>
+        <div class="science-note" data-en="Images on this page are original AI-generated illustrations. Current Studio previews are demonstrations, not real YouCam transformations." data-ru="Изображения на этой странице специально созданы с помощью ИИ. В Studio пока демонстрационные превью, а не настоящая обработка через YouCam." data-es="Las imágenes son ilustraciones originales generadas por IA. Studio muestra demostraciones, no transformaciones reales de YouCam." data-zh="本页图片为原创 AI 生成插画。目前 Studio 仅提供演示，不是真实的 YouCam 图像转换。">Images on this page are original AI-generated illustrations. Current Studio previews are demonstrations, not real YouCam transformations.</div>
       </div>
       <div class="science-list">
         <a class="science-item" href="https://www.who.int/news-room/fact-sheets/detail/sodium-reduction" target="_blank" rel="noopener noreferrer">
           <small>WHO · Public health guidance</small>
-          <strong data-en="Sodium reduction and fluid balance" data-ru="Соль, натрий и баланс жидкости">Sodium reduction and fluid balance</strong>
-          <p data-en="Guidance on sodium intake and health; not a formula for facial puffiness." data-ru="О потреблении соли и здоровье; не формула расчёта отёчности лица.">Guidance on sodium intake and health; not a formula for facial puffiness.</p>
+          <strong data-en="Sodium reduction and fluid balance" data-ru="Соль, натрий и баланс жидкости" data-es="Reducción de sodio y equilibrio de líquidos" data-zh="减少钠摄入与体液平衡">Sodium reduction and fluid balance</strong>
+          <p data-en="Guidance on sodium intake and health; not a formula for facial puffiness." data-ru="О потреблении соли и здоровье; не формула расчёта отёчности лица." data-es="Orientaciones sobre sodio y salud, no una fórmula para la hinchazón facial." data-zh="关于钠摄入和健康的建议，不是预测面部浮肿的公式。">Guidance on sodium intake and health; not a formula for facial puffiness.</p>
           
         </a>
         <a class="science-item" href="https://www.aad.org/public/diseases/acne/causes/diet" target="_blank" rel="noopener noreferrer">
           <small>American Academy of Dermatology</small>
-          <strong data-en="Diet and acne: what is known" data-ru="Питание и акне: что известно">Diet and acne: what is known</strong>
-          <p data-en="How high-glycemic dietary patterns may relate to acne in some people." data-ru="Как высокогликемический рацион может быть связан с акне у некоторых людей.">How high-glycemic dietary patterns may relate to acne in some people.</p>
+          <strong data-en="Diet and acne: what is known" data-ru="Питание и акне: что известно" data-es="Alimentación y acné: lo que sabemos" data-zh="饮食与痤疮：已知信息">Diet and acne: what is known</strong>
+          <p data-en="How high-glycemic dietary patterns may relate to acne in some people." data-ru="Как высокогликемический рацион может быть связан с акне у некоторых людей." data-es="Cómo los hábitos de alto índice glucémico pueden relacionarse con el acné." data-zh="高升糖负荷饮食模式可能与部分人群的痤疮有关。">How high-glycemic dietary patterns may relate to acne in some people.</p>
           
         </a>
         <a class="science-item" href="https://www.who.int/news-room/fact-sheets/detail/healthy-diet" target="_blank" rel="noopener noreferrer">
           <small>WHO · Nutrition</small>
-          <strong data-en="Healthy diet and free sugars" data-ru="Здоровое питание и свободные сахара">Healthy diet and free sugars</strong>
-          <p data-en="Balanced eating patterns and recommendations on free sugar intake." data-ru="Принципы сбалансированного питания и рекомендации по свободным сахарам.">Balanced eating patterns and recommendations on free sugar intake.</p>
+          <strong data-en="Healthy diet and free sugars" data-ru="Здоровое питание и свободные сахара" data-es="Dieta saludable y azúcares libres" data-zh="健康饮食与游离糖">Healthy diet and free sugars</strong>
+          <p data-en="Balanced eating patterns and recommendations on free sugar intake." data-ru="Принципы сбалансированного питания и рекомендации по свободным сахарам." data-es="Recomendaciones sobre alimentación equilibrada y azúcar." data-zh="均衡饮食与游离糖摄入建议。">Balanced eating patterns and recommendations on free sugar intake.</p>
           
         </a>
         <a class="science-item" href="https://fdc.nal.usda.gov/" target="_blank" rel="noopener noreferrer">
           <small>USDA · FoodData Central</small>
-          <strong data-en="Food composition database" data-ru="База состава пищевых продуктов">Food composition database</strong>
-          <p data-en="A reference for nutrients and amounts in general food ingredients." data-ru="Справочная информация по нутриентам и содержанию веществ в продуктах.">A reference for nutrients and amounts in general food ingredients.</p>
+          <strong data-en="Food composition database" data-ru="База состава пищевых продуктов" data-es="Base de datos de composición de alimentos" data-zh="食物营养数据库">Food composition database</strong>
+          <p data-en="A reference for nutrients and amounts in general food ingredients." data-ru="Справочная информация по нутриентам и содержанию веществ в продуктах." data-es="Referencia de nutrientes y cantidades." data-zh="常见食物营养成分与份量参考。">A reference for nutrients and amounts in general food ingredients.</p>
           
         </a>
       </div>
@@ -403,28 +404,28 @@ a:hover>.brand-symbol{transform:rotate(0deg)}
   </div>
 </section>
 
-<section class="business-section" id="business" aria-labelledby="business-title"><div class="shell"><div class="business-head"><div><div class="business-eyebrow" data-en="FOR BUSINESS · PARTNERSHIPS" data-ru="ДЛЯ БИЗНЕСА · СОТРУДНИЧЕСТВО">FOR BUSINESS · PARTNERSHIPS</div><h2 id="business-title" data-en="An interactive experience.<br><em>Built to grow with brands.</em>" data-ru="Интерактивный опыт.<br><em>Возможности для брендов.</em>">An interactive experience.<br><em>Built to grow with brands.</em></h2></div><p data-en="We work with beauty and wellness teams on interactive skin education experiences. Contact us to discuss a branded project or collaboration." data-ru="Предлагаем сотрудничество beauty- и wellness-компаниям: интерактивные образовательные проекты о коже, брендовые кампании и индивидуальные решения. Напишите нам для обсуждения.">We work with beauty and wellness teams on interactive skin education experiences. Contact us to discuss a branded project or collaboration.</p></div><div class="business-grid"><article class="business-tile"><span class="business-number">01 / B2B SAAS</span><h3 data-en="Brand experiences" data-ru="Брендовые решения">Brand experiences</h3><p data-en="Interactive skin education concepts and branded campaign design for beauty and wellness websites. Contact us for project scope and terms." data-ru="Разработка концепций интерактивных образовательных модулей и брендовых кампаний для beauty- и wellness-сайтов. Условия обсуждаются индивидуально.">Interactive skin education concepts and branded campaign design for beauty and wellness websites. Contact us for project scope and terms.</p></article><article class="business-tile"><span class="business-number">02 / WHITE-LABEL</span><h3 data-en="Your brand, our concept" data-ru="Ваш бренд, наша концепция">Your brand, our concept</h3><p data-en="Custom branded experience design and adaptation for company identity and educational campaigns. Technical implementation is scoped individually." data-ru="Дизайн и адаптация интерактивного опыта под фирменный стиль компании и её образовательные кампании. Технический объём согласовывается отдельно.">Custom branded experience design and adaptation for company identity and educational campaigns. Technical implementation is scoped individually.</p></article><article class="business-tile"><span class="business-number">03 / INTEGRATIONS</span><h3 data-en="Platform partnerships" data-ru="Партнёрства с платформами">Platform partnerships</h3><p data-en="Partnership inquiries and integration planning for interactive campaigns. API connectivity is assessed and agreed upon per project." data-ru="Обсуждаем партнёрства, интерактивные кампании и планирование интеграций. Возможность API-подключения оценивается для каждого проекта.">Partnership inquiries and integration planning for interactive campaigns. API connectivity is assessed and agreed upon per project.</p></article></div><div class="business-foot"><span data-en="Business collaborations and custom project inquiries are open." data-ru="Открыты к коммерческому сотрудничеству и индивидуальным проектам.">Business collaborations and custom project inquiries are open.</span><a href="mailto:edsvas168@gmail.com?subject=Face%20%26%20Body%20Twin%20Business%20Inquiry" data-en="Contact us: edsvas168@gmail.com" data-ru="Связаться: edsvas168@gmail.com">Contact us: edsvas168@gmail.com</a></div></div></section>
+<section class="business-section" id="business" aria-labelledby="business-title"><div class="shell"><div class="business-head"><div><div class="business-eyebrow" data-en="FOR BUSINESS · PARTNERSHIPS" data-ru="ДЛЯ БИЗНЕСА · СОТРУДНИЧЕСТВО" data-es="PARA EMPRESAS · COLABORACIONES" data-zh="商务合作 · 合作方案">FOR BUSINESS · PARTNERSHIPS</div><h2 id="business-title" data-en="An interactive experience.<br><em>Built to grow with brands.</em>" data-ru="Интерактивный опыт.<br><em>Возможности для брендов.</em>" data-es="Una experiencia interactiva.<br><em>Para crecer con las marcas.</em>" data-zh="互动体验。<br><em>与品牌共同成长。</em>">An interactive experience.<br><em>Built to grow with brands.</em></h2></div><p data-en="We work with beauty and wellness teams on interactive skin education experiences. Contact us to discuss a branded project or collaboration." data-ru="Предлагаем сотрудничество beauty- и wellness-компаниям: интерактивные образовательные проекты о коже, брендовые кампании и индивидуальные решения. Напишите нам для обсуждения." data-es="Colaboramos con equipos de belleza y bienestar en experiencias educativas sobre la piel. Contáctanos para proyectos de marca." data-zh="我们为美妆与健康品牌提供互动式皮肤科普项目的合作洽谈。欢迎联系探讨品牌活动。">We work with beauty and wellness teams on interactive skin education experiences. Contact us to discuss a branded project or collaboration.</p></div><div class="business-grid"><article class="business-tile"><span class="business-number">01 / B2B SAAS</span><h3 data-en="Brand experiences" data-ru="Брендовые решения" data-es="Experiencias de marca" data-zh="品牌互动体验">Brand experiences</h3><p data-en="Interactive skin education concepts and branded campaign design for beauty and wellness websites. Contact us for project scope and terms." data-ru="Разработка концепций интерактивных образовательных модулей и брендовых кампаний для beauty- и wellness-сайтов. Условия обсуждаются индивидуально." data-es="Diseño de experiencias educativas interactivas y campañas para sitios de belleza y bienestar. Consultar condiciones." data-zh="为美妆和健康网站策划互动式皮肤教育内容及品牌活动，具体范围可洽谈。">Interactive skin education concepts and branded campaign design for beauty and wellness websites. Contact us for project scope and terms.</p></article><article class="business-tile"><span class="business-number">02 / WHITE-LABEL</span><h3 data-en="Your brand, our concept" data-ru="Ваш бренд, наша концепция" data-es="Tu marca, nuestro concepto" data-zh="您的品牌，我们的理念">Your brand, our concept</h3><p data-en="Custom branded experience design and adaptation for company identity and educational campaigns. Technical implementation is scoped individually." data-ru="Дизайн и адаптация интерактивного опыта под фирменный стиль компании и её образовательные кампании. Технический объём согласовывается отдельно." data-es="Diseño y adaptación de experiencias a la identidad y campañas de cada empresa. Alcance técnico a convenir." data-zh="结合企业品牌形象定制互动体验与科普活动，技术实施范围需单独确认。">Custom branded experience design and adaptation for company identity and educational campaigns. Technical implementation is scoped individually.</p></article><article class="business-tile"><span class="business-number">03 / INTEGRATIONS</span><h3 data-en="Platform partnerships" data-ru="Партнёрства с платформами" data-es="Alianzas entre plataformas" data-zh="平台合作">Platform partnerships</h3><p data-en="Partnership inquiries and integration planning for interactive campaigns. API connectivity is assessed and agreed upon per project." data-ru="Обсуждаем партнёрства, интерактивные кампании и планирование интеграций. Возможность API-подключения оценивается для каждого проекта." data-es="Consultas sobre alianzas, campañas e integraciones. Cada conexión API requiere evaluación técnica." data-zh="洽谈平台合作、互动活动及集成规划。API 连接能力将根据项目进行评估。">Partnership inquiries and integration planning for interactive campaigns. API connectivity is assessed and agreed upon per project.</p></article></div><div class="business-foot"><span data-en="Business collaborations and custom project inquiries are open." data-ru="Открыты к коммерческому сотрудничеству и индивидуальным проектам." data-es="Abiertos a colaboraciones comerciales y proyectos personalizados." data-zh="欢迎商业合作及定制项目咨询。">Business collaborations and custom project inquiries are open.</span><a href="mailto:edsvas168@gmail.com?subject=Face%20%26%20Body%20Twin%20Business%20Inquiry" data-en="Contact us: edsvas168@gmail.com" data-ru="Связаться: edsvas168@gmail.com" data-es="Contacto: edsvas168@gmail.com" data-zh="联系邮箱：edsvas168@gmail.com">Contact us: edsvas168@gmail.com</a></div></div></section>
 <section class="section faq" id="faq">
   <div class="shell">
     <div class="section-head">
       <div>
-        <div class="section-eyebrow" data-en="Frequently asked questions" data-ru="Частые вопросы">Frequently asked questions</div>
-        <h2 data-en="A few things <em>worth knowing.</em>" data-ru="Что <em>важно знать.</em>">A few things <em>worth knowing.</em></h2>
+        <div class="section-eyebrow" data-en="Frequently asked questions" data-ru="Частые вопросы" data-es="Preguntas frecuentes" data-zh="常见问题">Frequently asked questions</div>
+        <h2 data-en="A few things <em>worth knowing.</em>" data-ru="Что <em>важно знать.</em>" data-es="Algunas cosas <em>que debes saber.</em>" data-zh="你需要<em>了解的事。</em>">A few things <em>worth knowing.</em></h2>
       </div>
     </div>
     <div class="faq-list">
-      <details class="faq-item"><summary data-en="Does a visualization predict exactly what will happen to me?" data-ru="Визуализация точно показывает, что со мной произойдёт?">Does a visualization predict exactly what will happen to me?</summary><div class="faq-body" data-en="No. The result is an illustrative scenario based on general evidence and predefined demo behavior. Individual effects differ, and the depicted change may not happen." data-ru="Нет. Это иллюстративный сценарий, основанный на общих научных сведениях и демонстрационных правилах. Реакции индивидуальны, и показанное изменение может не произойти.">No. The result is an illustrative scenario based on general evidence and predefined demo behavior. Individual effects differ, and the depicted change may not happen.</div></details>
-      <details class="faq-item"><summary data-en="Do I need to upload a photo?" data-ru="Обязательно ли загружать своё фото?">Do I need to upload a photo?</summary><div class="faq-body" data-en="No. You can choose a ready-made female or male demonstration model. The current Studio also supports a local photo preview." data-ru="Нет. Выбери готовую женскую или мужскую модель. В Studio также доступен локальный просмотр собственного фото.">No. You can choose a ready-made female or male demonstration model. The current Studio also supports a local photo preview.</div></details>
-      <details class="faq-item"><summary data-en="Is this already a live YouCam AI transformation?" data-ru="Здесь уже работает настоящее преобразование YouCam?">Is this already a live YouCam AI transformation?</summary><div class="faq-body" data-en="Not yet. The current Studio is a prototype with illustrative avatar visuals and unchanged local photo previews. The YouCam integration is a separate development phase." data-ru="Пока нет. Нынешняя Studio — прототип с иллюстрациями аватаров и локальным просмотром фото без изменений. Интеграцию YouCam мы разрабатываем отдельно.">Not yet. The current Studio is a prototype with illustrative avatar visuals and unchanged local photo previews. The YouCam integration is a separate development phase.</div></details>
-      <details class="faq-item"><summary data-en="How long might food-related puffiness last?" data-ru="Как долго может сохраняться отёчность?">How long might food-related puffiness last?</summary><div class="faq-body" data-en="Mild puffiness may resolve within hours for some people, but fluid retention can last longer. The cause and personal factors matter; the app cannot predict your timing." data-ru="Лёгкая припухлость у некоторых людей уменьшается за несколько часов, но может сохраняться и дольше. Причина и индивидуальные факторы имеют значение; приложение не предсказывает точные сроки.">Mild puffiness may resolve within hours for some people, but fluid retention can last longer. The cause and personal factors matter; the app cannot predict your timing.</div></details>
+      <details class="faq-item"><summary data-en="Does a visualization predict exactly what will happen to me?" data-ru="Визуализация точно показывает, что со мной произойдёт?" data-es="¿La visualización predice exactamente qué me ocurrirá?" data-zh="可视化是否能准确预测我的变化？">Does a visualization predict exactly what will happen to me?</summary><div class="faq-body" data-en="No. The result is an illustrative scenario based on general evidence and predefined demo behavior. Individual effects differ, and the depicted change may not happen." data-ru="Нет. Это иллюстративный сценарий, основанный на общих научных сведениях и демонстрационных правилах. Реакции индивидуальны, и показанное изменение может не произойти." data-es="No. Es un escenario ilustrativo basado en información general y una demostración predefinida. Los efectos individuales varían." data-zh="不能。这是基于一般资料和预设演示的示意情景，个体反应各不相同。">No. The result is an illustrative scenario based on general evidence and predefined demo behavior. Individual effects differ, and the depicted change may not happen.</div></details>
+      <details class="faq-item"><summary data-en="Do I need to upload a photo?" data-ru="Обязательно ли загружать своё фото?" data-es="¿Tengo que subir una foto?" data-zh="我必须上传照片吗？">Do I need to upload a photo?</summary><div class="faq-body" data-en="No. You can choose a ready-made female or male demonstration model. The current Studio also supports a local photo preview." data-ru="Нет. Выбери готовую женскую или мужскую модель. В Studio также доступен локальный просмотр собственного фото." data-es="No. Puedes elegir un modelo de demostración. Studio también permite previsualizar una foto local." data-zh="不需要。你可以选择预设模特。Studio 也支持本地照片预览。">No. You can choose a ready-made female or male demonstration model. The current Studio also supports a local photo preview.</div></details>
+      <details class="faq-item"><summary data-en="Is this already a live YouCam AI transformation?" data-ru="Здесь уже работает настоящее преобразование YouCam?" data-es="¿Ya funciona la transformación de IA de YouCam?" data-zh="现在已接入 YouCam AI 实时转换吗？">Is this already a live YouCam AI transformation?</summary><div class="faq-body" data-en="Not yet. The current Studio is a prototype with illustrative avatar visuals and unchanged local photo previews. The YouCam integration is a separate development phase." data-ru="Пока нет. Нынешняя Studio — прототип с иллюстрациями аватаров и локальным просмотром фото без изменений. Интеграцию YouCam мы разрабатываем отдельно." data-es="Todavía no. Studio es un prototipo con imágenes ilustrativas y fotos locales sin modificar. La integración con YouCam no está activa." data-zh="尚未接入。目前 Studio 为原型，使用示意模特，上传照片仅在本地原样预览。">Not yet. The current Studio is a prototype with illustrative avatar visuals and unchanged local photo previews. The YouCam integration is a separate development phase.</div></details>
+      <details class="faq-item"><summary data-en="How long might food-related puffiness last?" data-ru="Как долго может сохраняться отёчность?" data-es="¿Cuánto puede durar la hinchazón relacionada con la comida?" data-zh="饮食相关的浮肿会持续多久？">How long might food-related puffiness last?</summary><div class="faq-body" data-en="Mild puffiness may resolve within hours for some people, but fluid retention can last longer. The cause and personal factors matter; the app cannot predict your timing." data-ru="Лёгкая припухлость у некоторых людей уменьшается за несколько часов, но может сохраняться и дольше. Причина и индивидуальные факторы имеют значение; приложение не предсказывает точные сроки." data-es="Una hinchazón leve puede desaparecer en unas horas, pero la retención de líquidos puede durar más. Depende de cada caso." data-zh="部分轻微浮肿可能在几小时内缓解，但体液潴留也可能持续更久，具体取决于个人情况。">Mild puffiness may resolve within hours for some people, but fluid retention can last longer. The cause and personal factors matter; the app cannot predict your timing.</div></details>
     </div>
   </div>
 </section>
 
 <section class="final">
   <div class="shell final-inner">
-    <h2 data-en="See the possibilities.<br><em>Choose with curiosity.</em>" data-ru="Посмотри возможное.<br><em>Выбирай осознанно.</em>">See the possibilities.<br><em>Choose with curiosity.</em></h2>
-    <a href="/studio/" class="btn btn-primary" style="font-size:15px;padding:16px 32px"><span data-en="Open the Studio" data-ru="Перейти в Studio">Open the Studio</span></a>
+    <h2 data-en="See the possibilities.<br><em>Choose with curiosity.</em>" data-ru="Посмотри возможное.<br><em>Выбирай осознанно.</em>" data-es="Explora las posibilidades. <em>Decide con curiosidad.</em>" data-zh="探索可能性，<em>理性做选择。</em>">See the possibilities.<br><em>Choose with curiosity.</em></h2>
+    <a href="/studio/" class="btn btn-primary" style="font-size:15px;padding:16px 32px"><span data-en="Open the Studio" data-ru="Перейти в Studio" data-es="Abrir Studio" data-zh="进入 Studio">Open the Studio</span></a>
   </div>
 </section>
 </main>
@@ -434,19 +435,19 @@ a:hover>.brand-symbol{transform:rotate(0deg)}
     <div class="footer-grid">
       <div>
         <a class="brand" href="/"><span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 40 40" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="19" r="9" stroke="currentColor" stroke-width="3"/><circle cx="25" cy="21" r="9" stroke="currentColor" stroke-width="3"/><path d="M20 7v5M17.5 9.5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span>Face &amp; Body Twin</span></a>
-        <p class="footer-note" data-en="Experimental educational beauty-tech. Illustrations and recommendations are not medical advice, diagnosis, or predictions of an individual's response to food." data-ru="Образовательный экспериментальный проект. Иллюстрации и рекомендации не являются медицинским советом, диагнозом или прогнозом реакции на питание.">Experimental educational beauty-tech. Illustrations and recommendations are not medical advice, diagnosis, or predictions of an individual's response to food.</p>
+        <p class="footer-note" data-en="Experimental educational beauty-tech. Illustrations and recommendations are not medical advice, diagnosis, or predictions of an individual's response to food." data-ru="Образовательный экспериментальный проект. Иллюстрации и рекомендации не являются медицинским советом, диагнозом или прогнозом реакции на питание." data-es="Beauty-tech educativo experimental. Las imágenes y los consejos no son diagnósticos, tratamientos ni predicciones médicas." data-zh="实验性美容科技教育项目。插画和建议并非医疗诊断、治疗或个人预测。">Experimental educational beauty-tech. Illustrations and recommendations are not medical advice, diagnosis, or predictions of an individual's response to food.</p>
       </div>
       <nav class="footer-nav">
-        <a href="#top" data-en="Home" data-ru="Главная">Home</a>
-        <a href="#how" data-en="How it works" data-ru="Как работает">How it works</a>
-        <a href="#science" data-en="Science" data-ru="Наука">Science</a>
+        <a href="#top" data-en="Home" data-ru="Главная" data-es="Inicio" data-zh="首页">Home</a>
+        <a href="#how" data-en="How it works" data-ru="Как работает" data-es="Cómo funciona" data-zh="工作原理">How it works</a>
+        <a href="#science" data-en="Science" data-ru="Наука" data-es="Ciencia" data-zh="科学依据">Science</a>
         <a href="#faq">FAQ</a>
         <a href="/studio/">Studio</a>
       </nav>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Face &amp; Body Twin</span>
-      <span data-en="Original illustrative artwork · Educational context" data-ru="Оригинальные иллюстрации · Образовательные материалы">Original illustrative artwork · Educational context</span>
+      <span data-en="Original illustrative artwork · Educational context" data-ru="Оригинальные иллюстрации · Образовательные материалы" data-es="Arte ilustrativo original · Contexto educativo" data-zh="原创示意插画 · 教育用途">Original illustrative artwork · Educational context</span>
     </div>
   </div>
 </footer>
@@ -459,10 +460,10 @@ a:hover>.brand-symbol{transform:rotate(0deg)}
   window.addEventListener('scroll',onScroll,{passive:true});
   onScroll();
 
-  const langButtons={en:document.getElementById('enButton'),ru:document.getElementById('ruButton')};
+  const langButtons={en:document.getElementById('enButton'),ru:document.getElementById('ruButton'),es:document.getElementById('esButton'),zh:document.getElementById('zhButton')};
   function setLang(lang){
     document.documentElement.lang=lang;
-    document.querySelectorAll('[data-en][data-ru]').forEach(el=>{el.innerHTML=el.dataset[lang]});
+    document.querySelectorAll('[data-en][data-ru][data-es][data-zh]').forEach(el=>{el.innerHTML=el.dataset[lang]});
     for(const [k,b] of Object.entries(langButtons)){
       const active=k===lang;
       b.classList.toggle('selected',active);
@@ -472,7 +473,9 @@ a:hover>.brand-symbol{transform:rotate(0deg)}
   }
   langButtons.en.addEventListener('click',()=>setLang('en'));
   langButtons.ru.addEventListener('click',()=>setLang('ru'));
-  let lang='en';try{lang=localStorage.getItem('fbt-lang')==='ru'?'ru':'en'}catch(e){}
+  langButtons.es.addEventListener('click',()=>setLang('es'));
+  langButtons.zh.addEventListener('click',()=>setLang('zh'));
+  let lang='en';try{const saved=localStorage.getItem('fbt-lang');lang=['en','ru','es','zh'].includes(saved)?saved:'en'}catch(e){}
   setLang(lang);
 
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
