@@ -8,7 +8,7 @@
 <title>Face & Body Twin — See what food may mean for your appearance</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#0A1A12;
@@ -242,6 +242,16 @@ a:hover>.brand-symbol{transform:rotate(0deg)}
 .business-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.business-tile{border:1px solid #315341;border-radius:20px;padding:28px;background:linear-gradient(145deg,#143623,#0d2619);min-height:235px;display:flex;flex-direction:column;align-items:flex-start}.business-number{font:600 11px Sora,sans-serif;color:#c8f55f;letter-spacing:.13em}.business-tile h3{font:600 21px Sora,sans-serif;letter-spacing:-.04em;color:#fff;margin:31px 0 10px}.business-tile p{font:13px/1.75 Inter,sans-serif;color:#b9c8bb;margin:0}.business-foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;padding-top:26px}.business-foot span{color:#a8b8aa;font:12px/1.6 Inter,sans-serif}.business-foot a{color:#c8f55f;text-decoration:underline;text-underline-offset:4px;font:600 13px Sora,sans-serif}
 @media(max-width:800px){.business-section{padding:72px 0}.business-head{display:block}.business-head p{margin-top:20px}.business-grid{grid-template-columns:1fr}.business-tile{min-height:auto;padding:25px}.business-tile h3{margin-top:20px}}
 .lang{display:flex;gap:3px;align-items:center}.lang button{white-space:nowrap}.header-actions{min-width:0}@media(max-width:600px){.lang button{padding:6px 7px;font-size:10px}.header-actions{gap:8px}.header-actions .btn{padding:9px 11px;font-size:11px}}
+/* Refined shared design system */
+:root{--font-display:'Space Grotesk',sans-serif;--font-body:'IBM Plex Sans',sans-serif}
+body{font-family:var(--font-body);font-size:16px}
+h1,h2,h3,.brand,.btn,.section-eyebrow,.business-head h2,.business-tile h3{font-family:var(--font-display)}
+.hero h1{line-height:1.13;letter-spacing:-.05em}.section-head h2{line-height:1.17}
+button:active,.btn:active{transform:scale(.98)}
+.benefit,.step,.business-tile{box-shadow:0 8px 24px rgba(3,19,12,.07);transition:transform .22s ease,box-shadow .22s ease}
+.benefit:hover,.step:hover,.business-tile:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(3,19,12,.12)}
+@media(prefers-reduced-motion:no-preference){.hero-copy{animation:polishReveal .55s ease-out both}.hero-visual{animation:polishReveal .65s .12s ease-out both}@keyframes polishReveal{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}}
+@media(prefers-reduced-motion:reduce){.benefit,.step,.business-tile{transition:none}}
 </style>
 </head>
 <body>
