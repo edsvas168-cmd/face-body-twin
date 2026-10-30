@@ -375,26 +375,30 @@ renderThumbs();updateUnits();
  const button=document.getElementById('aiStart'),feedback=document.getElementById('aiFeedback'),output=document.getElementById('aiResult');
  if(!button)return;
  button.addEventListener('click',async()=>{
+  const plan=ENGINE.resolveScenario({scenarioId:state.scenario,items:state.scenario?[]:state.items,catalog:CATALOG});
+  if(!plan.apiEligible){feedback.textContent=plan.reason;return;}
   if(!document.getElementById('aiConsent').checked){feedback.textContent='Please accept the YouCam demo processing notice first.';return;}
-  if(state.model==='upload'){feedback.textContent='Please choose a demo woman or man. Personal uploads are not sent to YouCam.';return;}
-  button.disabled=true;output.classList.add('hidden');feedback.textContent='Starting optional YouCam cosmetic enhancement…';
+  if(state.model==='upload'){feedback.textContent='Choose a demo model. Personal uploads are never sent to YouCam.';return;}
+  const accessCode=document.getElementById('aiAccessCode').value;
+  if(accessCode.length<16){feedback.textContent='Enter the private test access code (minimum 16 characters).';return;}
+  button.disabled=true;output.classList.add('hidden');feedback.textContent='Starting a YouCam visual scenario…';
   try{
-   const response=await fetch('/api/youcam-start',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({gender:state.model==='man'?'male':'female',age:state.age,consent:true})});
-   const started=await response.json();if(!response.ok)throw Error(started.error||'Cannot start YouCam demo');
-   feedback.textContent='Processing selected demo avatar with YouCam…';
-   for(let attempt=0;attempt<12;attempt++){
-    await new Promise(r=>setTimeout(r,5000));
-    const check=await fetch('/api/youcam-status?taskId='+encodeURIComponent(started.taskId));
-    const result=await check.json();if(!check.ok)throw Error(result.error||'Could not retrieve result');
-    if(result.status==='error')throw Error(result.error||'YouCam could not process this avatar');
+   const response=await fetch('/api/youcam-start',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({gender:state.model==='man'?'male':'female',age:state.age,consent:true,scenarioId:state.scenario,items:state.scenario?[]:state.items,accessCode})});
+   const started=await response.json();if(!response.ok)throw Error(started.error||'Unable to start YouCam');
+   feedback.textContent='YouCam is processing the public demo portrait…';
+   for(let n=0;n<12;n++){
+    await new Promise(resolve=>setTimeout(resolve,5000));
+    const reply=await fetch('/api/youcam-status?kind='+encodeURIComponent(started.kind)+'&taskId='+encodeURIComponent(started.taskId),{headers:{'x-demo-access-code':accessCode}});
+    const result=await reply.json();if(!reply.ok)throw Error(result.error||'Could not check the result');
+    if(result.status==='error')throw Error(result.error||'This portrait could not be processed');
     if(result.status==='success'){
-     if(result.resultUrl){output.src=result.resultUrl;output.classList.remove('hidden');feedback.textContent='AI cosmetic enhancement completed. This image does not predict food-related changes.';}
-     else feedback.textContent='YouCam completed the task but its image response needs adapter verification.';
+     if(result.resultUrl){output.src=result.resultUrl;output.classList.remove('hidden');feedback.textContent='AI visual edit completed. Not a medical forecast or a predicted result of food.';}
+     else feedback.textContent='YouCam completed the task but its result image format needs verification.';
      return;
     }
    }
-   feedback.textContent='The operation is taking longer than expected. Please try again later.';
-  }catch(e){feedback.textContent=e.message||'YouCam processing is unavailable. Please try again later.';}
+   feedback.textContent='The operation is taking longer than expected. Please check again later.';
+  }catch(e){feedback.textContent=e.message||'YouCam is unavailable. Please try again later.';}
   finally{button.disabled=false;}
  });
 })();
