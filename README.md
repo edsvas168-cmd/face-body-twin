@@ -58,3 +58,7 @@ The previous README described modules and tests that were not actually present i
 ## Food catalog expansion — 30 October 2026
 
 Studio now offers **26 selectable entries**: regular and zero-sugar cola, reference regular/sugar-free energy drinks, juices, milk, coffee, water, salt, sugar, fast food, desserts, fruit, vegetables and basic meals. Cola appears without a Kazakhstan suffix. Energy drink figures refer to a **250 ml reference product**, not every energy drink on the market; caffeine exposure is not calculated. Values marked as generic are approximate demonstration data and may differ by brand, serving, cooking method and label. Null nutrient fields remain unknown, not measured zero. Calories are flagged when an entry lacks calorie data. This is not a validated nutrition database; manual label input and ingredient-by-ingredient recipes remain planned, not implemented.
+
+## Balanced eating scenario — 31 October 2026
+
+The Studio catalog now contains 21 items. Six separate entries (apple, banana, orange, cucumber, rice, and chicken) have been replaced with one `Balanced meal (illustrative scenario)` entry. It is intentionally **not** assigned invented calorie, sugar, or sodium values: those are marked unknown. Selecting only this entry results in a non-predictive explanation of balanced eating, rather than claims that one meal changes skin or body shape. Numeric nutritional totals require ingredient- and portion-specific data. The broader WHO guidance is about dietary patterns, diversity and moderation.
