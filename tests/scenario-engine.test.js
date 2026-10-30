@@ -57,6 +57,7 @@ test('actual API payload uses documented face reshape feature names',()=>{
  assert.equal(req.endpoint,'/s2s/v2.0/task/face-reshape');
  assert.deepEqual(req.payload.features,{face_width:12,face_reshape_left:6,face_reshape_right:6});
  assert.equal(req.payload.version,'1.0');
+ assert.deepEqual(req.payload.global,{skin_smooth_strength:0,skin_smooth_color_intensity:0});
 });
 test('client cannot supply arbitrary food ids, units or quantities',()=>{
  for(const items of [[food('unknown',1,'g')],[food('salt',101,'g')],[food('salt',-1,'g')],[food('salt',1,'not_a_unit')]]){
