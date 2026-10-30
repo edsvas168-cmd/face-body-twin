@@ -66,3 +66,19 @@ The Studio catalog now contains 21 items. Six separate entries (apple, banana, o
 ## Hackathon UX pivot — 31 October 2026
 
 Face Twin is now the primary active demo. Body Twin remains visible but disabled as **Coming soon**. Four prominent one-tap educational scenarios lead the Studio: excess salt, frequent fast food, frequent industrial trans fats, and frequent energy drinks. A manual food-and-portion builder remains lower on the page for exploration (e.g. one can rather than entering milliliters). Scenario outputs contain conditional, evidence-aware descriptions, practical non-medical tips, and a right-hand responsive sidebar with three non-sponsored **skincare product categories** (gentle cleanser, fragrance-free moisturizer, broad-spectrum SPF 30+). No personalized recommendation algorithm, merchant inventory, links or affiliate relationships have been implemented. Static scenario visuals and any filters are illustrative, **not** actual YouCam processing or physiological predictions. Strong hackathon technical proof still requires a real consent-gated YouCam server integration, scenario-to-parameter mapping, verified image results, error handling, privacy controls and tests.
+
+## Scenario engine (31 October 2026)
+
+A shared, deterministic computational layer now lives in `shared/catalog.js` and `shared/scenario-engine.js`. It is used by the Studio and the Vercel server functions, so the server validates and recalculates requested foods rather than accepting user-supplied AI effect parameters.
+
+- Food arithmetic includes kcal, sugar and sodium; unknown values stay flagged.
+- Illustrative sodium intensity: `clamp((knownSodiumMg - 2000)/4000, 0, 1)`, mapped to four conservative Face Reshape presets. It is **not** a medically validated salt-to-swelling formula.
+- The fixed salt card has a medium illustrative Face Reshape preset without pretending the user consumed a known amount.
+- The balanced eating card has a separate cosmetic Skin Simulation enhancement preset; it is not a guaranteed dietary outcome.
+- Unsupported adverse-skin effects have no invented YouCam API parameters and remain informational.
+- A private demo, protected behind `YOUCAM_DEMO_ENABLED` and an owner-only `YOUCAM_DEMO_ACCESS_CODE`, can generate a result for **public demo avatars only** and then place it into Studio's before/after view. It has not been run against live YouCam.
+- Body Twin is still out of scope.
+
+See `YOUCAM_SETUP.md` for integration, budget protection, and the testing plan. Run regression tests with `node --test tests/scenario-engine.test.js`.
+
+**Validation status:** deterministic engine and frontend scripts checked locally without YouCam calls; live endpoint permissions, visual output, API response format, Vercel deployment, and browser QA are pending.
