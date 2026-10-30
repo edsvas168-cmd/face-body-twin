@@ -50,3 +50,7 @@ Uploads are previewed locally using an object URL and **are not sent to YouCam**
 - `assets/`: original illustrations and reserved avatar folders.
 
 The previous README described modules and tests that were not actually present in the GitHub repository. Those claims have been corrected rather than falsely reporting shipped functionality.
+
+## Обновление дизайна и аватаров — 30.10.2026
+
+Главная страница переработана в тёмно-зелёной и лаймовой палитре по предоставленному HTML-референсу. Studio получила согласованные цвета и выбор четырёх возрастных групп (18–25, 26–40, 41–60, 61–80) для женской и мужской демонстрационной модели. На GitHub находятся 16 загруженных пользователем JPG: 8 портретов в `assets/avatars/face/` и 8 фотографий в полный рост в `assets/avatars/body/`. Имена имеют вид `female-18-25-face.jpg` / `male-18-25-body.jpg` и аналогично для других групп. Ни одно изображение не редактировалось. Интеграция YouCam по-прежнему не активирована.
