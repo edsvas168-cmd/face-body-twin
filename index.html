@@ -234,6 +234,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--lime);outline-offse
 /* Shared Face & Body Twin visual identity */
 .brand-symbol{width:39px;height:39px;display:inline-flex;align-items:center;justify-content:center;flex:none;background:#c8f55f;color:#071710;border-radius:13px;transform:rotate(-5deg);transition:transform .3s ease}
 a:hover>.brand-symbol{transform:rotate(0deg)}
+
+/* For Business / future B2B vision */
+.business-section{background:#071710;color:#f7f5ee;padding:100px 0;position:relative;overflow:hidden}
+.business-section:before{content:"";position:absolute;right:-160px;top:-220px;width:650px;height:650px;background:radial-gradient(circle,rgba(200,245,95,.10),transparent 65%);pointer-events:none}
+.business-head{display:flex;align-items:end;justify-content:space-between;gap:32px;margin-bottom:38px}.business-eyebrow{font:600 11px Sora,sans-serif;text-transform:uppercase;letter-spacing:.16em;color:#c8f55f;margin-bottom:15px}.business-head h2{font:700 clamp(32px,4vw,56px)/1.08 Sora,sans-serif;letter-spacing:-.05em;max-width:750px;margin:0}.business-head h2 em{font-style:normal;color:#c8f55f}.business-head p{font:14px/1.8 Inter,sans-serif;color:#b9c8bb;max-width:350px;margin:0}
+.business-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.business-tile{border:1px solid #315341;border-radius:20px;padding:28px;background:linear-gradient(145deg,#143623,#0d2619);min-height:235px;display:flex;flex-direction:column;align-items:flex-start}.business-number{font:600 11px Sora,sans-serif;color:#c8f55f;letter-spacing:.13em}.business-tile h3{font:600 21px Sora,sans-serif;letter-spacing:-.04em;color:#fff;margin:31px 0 10px}.business-tile p{font:13px/1.75 Inter,sans-serif;color:#b9c8bb;margin:0}.business-foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;padding-top:26px}.business-foot span{color:#a8b8aa;font:12px/1.6 Inter,sans-serif}.business-foot a{color:#c8f55f;text-decoration:underline;text-underline-offset:4px;font:600 13px Sora,sans-serif}
+@media(max-width:800px){.business-section{padding:72px 0}.business-head{display:block}.business-head p{margin-top:20px}.business-grid{grid-template-columns:1fr}.business-tile{min-height:auto;padding:25px}.business-tile h3{margin-top:20px}}
 </style>
 </head>
 <body>
@@ -246,6 +253,7 @@ a:hover>.brand-symbol{transform:rotate(0deg)}
       <a href="#how" data-en="How it works" data-ru="Как работает">How it works</a>
       <a href="#science" data-en="Science" data-ru="Наука">Science</a>
       <a href="#benefits" data-en="Benefits" data-ru="Возможности">Benefits</a>
+      <a href="#business" data-en="For Business" data-ru="Для бизнеса">For Business</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="header-actions">
@@ -395,6 +403,7 @@ a:hover>.brand-symbol{transform:rotate(0deg)}
   </div>
 </section>
 
+<section class="business-section" id="business" aria-labelledby="business-title"><div class="shell"><div class="business-head"><div><div class="business-eyebrow" data-en="FOR BUSINESS · OUR VISION" data-ru="ДЛЯ БИЗНЕСА · НАШЕ ВИДЕНИЕ">FOR BUSINESS · OUR VISION</div><h2 id="business-title" data-en="An interactive experience.<br><em>Built to grow with brands.</em>" data-ru="Интерактивный опыт.<br><em>Возможности для брендов.</em>">An interactive experience.<br><em>Built to grow with brands.</em></h2></div><p data-en="Face & Body Twin explores how everyday habits relate to skin. We see opportunities to bring this educational experience to brands, platforms and wellness communities." data-ru="Face & Body Twin помогает исследовать связь повседневных привычек и кожи. В будущем этот образовательный опыт можно адаптировать для брендов, платформ и wellness-сообществ.">Face & Body Twin explores how everyday habits relate to skin. We see opportunities to bring this educational experience to brands, platforms and wellness communities.</p></div><div class="business-grid"><article class="business-tile"><span class="business-number">01 / B2B SAAS</span><h3 data-en="Brand experiences" data-ru="Брендовые решения">Brand experiences</h3><p data-en="A possible subscription-based interactive skin education module for beauty and wellness websites." data-ru="Перспектива подписного интерактивного модуля об уходе и здоровье кожи для beauty- и wellness-сайтов.">A possible subscription-based interactive skin education module for beauty and wellness websites.</p></article><article class="business-tile"><span class="business-number">02 / WHITE-LABEL</span><h3 data-en="Your brand, our concept" data-ru="Ваш бренд, наша концепция">Your brand, our concept</h3><p data-en="A future customizable version that fits a company's visual identity and educational campaigns." data-ru="Будущая версия с возможностью адаптации под фирменный стиль компании и её образовательные кампании.">A future customizable version that fits a company's visual identity and educational campaigns.</p></article><article class="business-tile"><span class="business-number">03 / INTEGRATIONS</span><h3 data-en="Platform partnerships" data-ru="Партнёрства с платформами">Platform partnerships</h3><p data-en="Potential API integrations and tailored interactive campaigns, subject to development and technical validation." data-ru="Потенциальные API-интеграции и интерактивные кампании — после разработки и технической проверки.">Potential API integrations and tailored interactive campaigns, subject to development and technical validation.</p></article></div><div class="business-foot"><span data-en="Future business models — not yet available commercial services." data-ru="Планируемые бизнес-модели — коммерческие услуги пока не запущены.">Future business models — not yet available commercial services.</span><a href="/studio/" data-en="Explore the demo" data-ru="Посмотреть демо">Explore the demo</a></div></div></section>
 <section class="section faq" id="faq">
   <div class="shell">
     <div class="section-head">
