@@ -8,6 +8,10 @@ Keep the warm beige/ivory and forest-green editorial design. The homepage is **i
 
 On the homepage, two original AI-generated illustrations demonstrate the *concept* of before/possible scenario: `/assets/face-comparison.webp` and `/assets/body-comparison.webp`. Do not claim these are medically predicted consequences of food or genuine YouCam API outputs.
 
+## Current repository state (30 October 2026)
+
+The live repository is a **static prototype**, with embedded Studio logic in `studio/index.html`. The previously documented external JS modules, eight selectable avatars, automated test suite and live YouCam API are not checked in. Do not claim them as completed. The reserved face/body directories are empty apart from placeholders; missing images have visual fallbacks. The user will upload photos separately, and existing binary images must not be changed unless explicitly requested.
+
 ## What is working
 - Main and Studio routes, dedicated `/assets` directory
 - EN/RU language toggle on homepage (default English)
@@ -29,3 +33,11 @@ On the homepage, two original AI-generated illustrations demonstrate the *concep
 - The WHO sodium target is not a swelling threshold. No universal "grams salt -> % face edema" or "sugar -> acne tomorrow" formula.
 - For high-glycemic eating patterns and acne, communicate uncertainty and timing appropriately. Informational guidance, not a diagnosis or guarantee.
 - Current Studio is a prototype. Do not silently replace error handling with fake generated result.
+
+## Avatar delivery contract
+
+- Portraits: `assets/avatars/face/woman.webp`, `man.webp`.
+- Full-body: `assets/avatars/body/woman.webp`, `man.webp`.
+- Extend the UI and registry explicitly for additional planned characters; do not treat a folder as automatically scanned.
+- Keep the exact visible attribution: “Character assets were created with generative AI tools and used as illustrative visual models.”
+- Uploaded personal images must remain unmodified and local until a real API workflow and separate consent are built.
