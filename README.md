@@ -54,3 +54,7 @@ The previous README described modules and tests that were not actually present i
 ## Обновление дизайна и аватаров — 30.10.2026
 
 Главная страница переработана в тёмно-зелёной и лаймовой палитре по предоставленному HTML-референсу. Studio получила согласованные цвета и выбор четырёх возрастных групп (18–25, 26–40, 41–60, 61–80) для женской и мужской демонстрационной модели. На GitHub находятся 16 загруженных пользователем JPG: 8 портретов в `assets/avatars/face/` и 8 фотографий в полный рост в `assets/avatars/body/`. Имена имеют вид `female-18-25-face.jpg` / `male-18-25-body.jpg` и аналогично для других групп. Ни одно изображение не редактировалось. Интеграция YouCam по-прежнему не активирована.
+
+## Food catalog expansion — 30 October 2026
+
+Studio now offers **26 selectable entries**: regular and zero-sugar cola, reference regular/sugar-free energy drinks, juices, milk, coffee, water, salt, sugar, fast food, desserts, fruit, vegetables and basic meals. Cola appears without a Kazakhstan suffix. Energy drink figures refer to a **250 ml reference product**, not every energy drink on the market; caffeine exposure is not calculated. Values marked as generic are approximate demonstration data and may differ by brand, serving, cooking method and label. Null nutrient fields remain unknown, not measured zero. Calories are flagged when an entry lacks calorie data. This is not a validated nutrition database; manual label input and ingredient-by-ingredient recipes remain planned, not implemented.
