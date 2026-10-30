@@ -230,13 +230,17 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--lime);outline-offse
   .reveal{opacity:1;transform:none}
   html{scroll-behavior:auto}
 }
+
+/* Shared Face & Body Twin visual identity */
+.brand-symbol{width:39px;height:39px;display:inline-flex;align-items:center;justify-content:center;flex:none;background:#c8f55f;color:#071710;border-radius:13px;transform:rotate(-5deg);transition:transform .3s ease}
+a:hover>.brand-symbol{transform:rotate(0deg)}
 </style>
 </head>
 <body>
 
 <header class="header" id="header">
   <div class="shell header-inner">
-    <a class="brand" href="/"><span class="brand-mark">❧</span><span>Face &amp; Body Twin</span></a>
+    <a class="brand" href="/"><span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 40 40" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="19" r="9" stroke="currentColor" stroke-width="3"/><circle cx="25" cy="21" r="9" stroke="currentColor" stroke-width="3"/><path d="M20 7v5M17.5 9.5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span>Face &amp; Body Twin</span></a>
     <nav class="nav">
       <a href="#top" class="active" data-en="Home" data-ru="Главная">Home</a>
       <a href="#how" data-en="How it works" data-ru="Как работает">How it works</a>
@@ -420,7 +424,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--lime);outline-offse
   <div class="shell">
     <div class="footer-grid">
       <div>
-        <a class="brand" href="/"><span class="brand-mark">❧</span><span>Face &amp; Body Twin</span></a>
+        <a class="brand" href="/"><span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 40 40" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="19" r="9" stroke="currentColor" stroke-width="3"/><circle cx="25" cy="21" r="9" stroke="currentColor" stroke-width="3"/><path d="M20 7v5M17.5 9.5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span>Face &amp; Body Twin</span></a>
         <p class="footer-note" data-en="Experimental educational beauty-tech. Illustrations and recommendations are not medical advice, diagnosis, or predictions of an individual's response to food." data-ru="Образовательный экспериментальный проект. Иллюстрации и рекомендации не являются медицинским советом, диагнозом или прогнозом реакции на питание.">Experimental educational beauty-tech. Illustrations and recommendations are not medical advice, diagnosis, or predictions of an individual's response to food.</p>
       </div>
       <nav class="footer-nav">
