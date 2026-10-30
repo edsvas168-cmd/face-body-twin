@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#071710">
-<meta name="description" content="Explore how everyday food choices may relate to your appearance through illustrative face and body scenarios, practical tips, and accessible science.">
-<title>Face & Body Twin — See what food may mean for your appearance</title>
+<meta name="description" content="Explore food and appearance trends with sourced nutrition facts, transparent evidence and clearly labeled Face Twin illustrations. Facts, not myths.">
+<title>Face & Body Twin — Food & Appearance: Facts, Not Myths</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -252,6 +252,14 @@ button:active,.btn:active{transform:scale(.98)}
 .benefit:hover,.step:hover,.business-tile:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(3,19,12,.12)}
 @media(prefers-reduced-motion:no-preference){.hero-copy{animation:polishReveal .55s ease-out both}.hero-visual{animation:polishReveal .65s .12s ease-out both}@keyframes polishReveal{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}}
 @media(prefers-reduced-motion:reduce){.benefit,.step,.business-tile{transition:none}}
+
+/* Face-focused hero: single prominent before/after comparison */
+.hero-visual{height:540px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px}
+.hero-visual .hero-card.hero-card-a{position:relative;inset:auto;width:min(100%,450px);height:460px;transform:none;animation:none;border-radius:26px;box-shadow:0 34px 80px -28px rgba(0,0,0,.56)}
+.hero-visual .hero-card.hero-card-a img{object-fit:contain;object-position:center;background:#101b15}
+.hero-visual .hero-meta{position:relative;bottom:auto;left:auto;right:auto;margin:0}
+@media(max-width:950px){.hero-visual{height:auto;min-height:420px}.hero-visual .hero-card.hero-card-a{height:390px;max-width:440px}}
+@media(max-width:560px){.hero-visual{min-height:0}.hero-visual .hero-card.hero-card-a{height:350px;width:min(100%,370px)}}
 </style>
 </head>
 <body>
@@ -282,26 +290,22 @@ button:active,.btn:active{transform:scale(.98)}
   <div class="shell">
     <div class="hero-grid">
       <div class="hero-copy">
-        <div class="hero-eyebrow" data-en="Illustrative visual explorer" data-ru="Иллюстративная визуализация" data-es="Explorador visual ilustrativo" data-zh="示意性视觉探索">Illustrative visual explorer</div>
-        <h1 data-en="See your food.<br>See your <em>reflection.</em>" data-ru="Посмотри на еду.<br>Увидь своё <em>отражение.</em>" data-es="Mira tu comida. Mira tu <em>reflejo.</em>" data-zh="看见饮食，看见<em>自己的变化。</em>">See your food.<br>See your <em>reflection.</em></h1>
-        <p data-en="Face &amp; Body Twin helps you explore how everyday food choices may relate to your appearance — with clear numbers, honest science and visual scenarios that never pretend to be a medical forecast." data-ru="Face &amp; Body Twin помогает увидеть, как повседневные пищевые привычки могут отражаться на внешности — с точными цифрами, честной наукой и визуальными сценариями, которые не выдают себя за медицинский прогноз." data-es="Face &amp; Body Twin te ayuda a explorar cómo la alimentación puede relacionarse con tu apariencia, mediante ejemplos visuales y explicaciones responsables." data-zh="Face &amp; Body Twin 帮助你探索饮食习惯与外貌之间可能存在的联系，并提供清晰、审慎的视觉说明。">Face &amp; Body Twin helps you explore how everyday food choices may relate to your appearance — with clear numbers, honest science and visual scenarios that never pretend to be a medical forecast.</p>
+        <div class="hero-eyebrow" data-en="Food trend fact-checker" data-ru="Проверяем тренды о еде" data-es="Tendencias: mitos y datos" data-zh="饮食趋势与事实">Food trend fact-checker</div>
+        <h1 data-en="Food &amp; appearance.<br><em>Facts, not myths.</em>" data-ru="Еда и внешность.<br><em>Цифры, а не мифы.</em>" data-es="Alimentación y apariencia.<br><em>Datos, no mitos.</em>" data-zh="饮食与外貌。<br><em>看数据，不信传言。</em>">Food &amp; appearance.<br><em>Facts, not myths.</em></h1>
+        <p data-en="Explore popular claims about food and facial appearance with sourced nutrition numbers, context and clearly labeled visual examples — not medical predictions." data-ru="Разберись с трендами о еде и внешности: проверь цифры, изучи источники и посмотри условные примеры без обещаний предсказать изменения лица." data-es="Explora las tendencias sobre alimentación y apariencia facial con cifras verificables, fuentes y ejemplos visuales ilustrativos, no predicciones médicas." data-zh="探索饮食与面部外貌的流行说法，查看有来源的营养数据、科学背景与明确标注的示意图，而非医学预测。">Explore popular claims about food and facial appearance with sourced nutrition numbers, context and clearly labeled visual examples — not medical predictions.</p>
         <div class="hero-ctas">
           <a href="/studio/" class="btn btn-primary"><span data-en="Try the Studio" data-ru="Открыть Studio" data-es="Probar Studio" data-zh="体验 Studio">Try the Studio</span></a>
           <a href="#how" class="btn btn-ghost"><span data-en="How it works" data-ru="Как это работает" data-es="Cómo funciona" data-zh="工作原理">How it works</span></a>
         </div>
-        <div class="hero-note"><span aria-hidden="true">ⓘ</span><span data-en="For education and visual exploration. Before/after examples illustrate possibilities, not guaranteed effects of a meal." data-ru="Образовательная визуализация. Примеры «до/после» показывают возможные сценарии, а не гарантированные последствия приёма пищи." data-es="Con fines educativos. Las imágenes de antes y después ilustran posibilidades, no efectos garantizados." data-zh="仅供教育及视觉探索。前后对比仅为示意，不代表单次饮食必然产生的效果。">For education and visual exploration. Before/after examples illustrate possibilities, not guaranteed effects of a meal.</span></div>
+        <div class="hero-note"><span aria-hidden="true">ⓘ</span><span data-en="Nutrition facts come from reference data. Before/after visuals are illustrative edits, not predicted effects of food." data-ru="Пищевые цифры основаны на справочных данных. Иллюстрации «до/после» не предсказывают последствия еды." data-es="Los datos nutricionales proceden de fuentes de referencia. Las imágenes son ilustraciones, no efectos previstos de la comida." data-zh="营养数据来自参考资料。前后对比仅为示意，并非预测饮食后果。">Nutrition facts come from reference data. Before/after visuals are illustrative edits, not predicted effects of food.</span></div>
       </div>
       <div class="hero-visual">
         <article class="hero-card hero-card-a">
-          <img src="/assets/face-comparison.webp" alt="Illustrative face comparison" fetchpriority="high">
+          <img src="/assets/face-comparison.webp" alt="Face-focused illustrative before and after comparison" fetchpriority="high">
           <span class="card-tag">FACE TWIN</span>
           <div class="card-labels"><span data-en="Original" data-ru="До" data-es="Original" data-zh="原始状态">Original</span><span data-en="Possible" data-ru="Возможно" data-es="Posible" data-zh="可能变化">Possible</span></div>
         </article>
-        <article class="hero-card hero-card-b">
-          <img src="/assets/body-comparison.webp" alt="Illustrative body comparison" fetchpriority="high">
-          <span class="card-tag">BODY TWIN</span>
-          <div class="card-labels"><span data-en="Original" data-ru="До" data-es="Original" data-zh="原始状态">Original</span><span data-en="Possible" data-ru="Возможно" data-es="Posible" data-zh="可能变化">Possible</span></div>
-        </article>
+        
         <div class="hero-meta">
           <span><strong>100%</strong> <span data-en="honest" data-ru="честно" data-es="responsable" data-zh="审慎">honest</span></span>
           <span>•</span>
@@ -337,9 +341,9 @@ button:active,.btn:active{transform:scale(.98)}
       </article>
       <article class="benefit">
         <span class="benefit-num">02</span>
-        <div class="benefit-icon">♧</div>
-        <h3 data-en="Possible body changes" data-ru="Возможные изменения тела" data-es="Cambios posibles en el cuerpo" data-zh="可能的身体变化">Possible body changes</h3>
-        <p data-en="Consider fluid balance and body-related visual scenarios without exact-body predictions." data-ru="Примеры, связанные с балансом жидкости и внешним видом тела, без точного прогноза." data-es="Explora el equilibrio de líquidos sin predicciones corporales exactas." data-zh="了解水分平衡与身体外观的相关情景，而非精确预测。">Consider fluid balance and body-related visual scenarios without exact-body predictions.</p>
+        <div class="benefit-icon">≋</div>
+        <h3 data-en="Numbers before myths" data-ru="Цифры вместо мифов" data-es="Datos antes que mitos" data-zh="用数据辨别传言">Numbers before myths</h3>
+        <p data-en="Check available sugar, sodium and energy figures against the claims you see online. Missing information stays clearly marked." data-ru="Сравни сахар, натрий и калории с популярными заявлениями. Неизвестные показатели не выдаются за точные." data-es="Contrasta el azúcar, el sodio y las calorías con las afirmaciones que ves en redes. Los datos desconocidos se indican." data-zh="用糖分、钠和热量数据检验网络说法；缺失的数据会明确标注。">Check available sugar, sodium and energy figures against the claims you see online. Missing information stays clearly marked.</p>
       </article>
       <article class="benefit">
         <span class="benefit-num">03</span>
@@ -367,8 +371,8 @@ button:active,.btn:active{transform:scale(.98)}
       <p data-en="Explore a hypothetical meal or enter what you actually ate. No photo is required to try the demo." data-ru="Попробуй воображаемый сценарий или укажи то, что действительно съел. Загружать фото необязательно." data-es="Explora una comida hipotética o lo que has comido. No necesitas subir una foto para probar la demo." data-zh="可以探索假设的饮食情景，也可以输入实际吃过的食物。体验演示无需上传照片。">Explore a hypothetical meal or enter what you actually ate. No photo is required to try the demo.</p>
     </div>
     <div class="steps">
-      <article class="step"><div class="step-num">01</div><h3 data-en="Add your food" data-ru="Выбери продукты" data-es="Añade alimentos" data-zh="添加食物">Add your food</h3><p data-en="Select foods, portions and combinations. Known nutrients are calculated from source data." data-ru="Укажи продукты, порции и сочетания. Известные нутриенты рассчитаются по данным источников." data-es="Elige productos, porciones y combinaciones. Calculamos los nutrientes disponibles." data-zh="选择食物、份量和组合。根据参考数据计算已知营养成分。">Select foods, portions and combinations. Known nutrients are calculated from source data.</p></article>
-      <article class="step"><div class="step-num">02</div><h3 data-en="Choose a model" data-ru="Выбери модель" data-es="Elige un modelo" data-zh="选择模特">Choose a model</h3><p data-en="Use a prepared female or male model, or preview your own photo locally." data-ru="Используй готовую женскую или мужскую модель либо своё фото (локально)." data-es="Usa un modelo preparado o previsualiza tu foto de forma local." data-zh="使用预设男女模特，或仅在本地预览个人照片。">Use a prepared female or male model, or preview your own photo locally.</p></article>
+      <article class="step"><div class="step-num">01</div><h3 data-en="Pick a food claim" data-ru="Выбери тренд о еде" data-es="Elige una tendencia" data-zh="选择一种饮食说法">Pick a food claim</h3><p data-en="Tap a ready-made scenario or enter food quantities to explore sourced nutrition numbers." data-ru="Нажми на готовый сценарий или укажи продукты, чтобы узнать их показатели по источникам." data-es="Elige un escenario o añade alimentos para consultar cifras nutricionales basadas en fuentes." data-zh="点击预设情景或输入食物，查看有来源的营养数据。">Tap a ready-made scenario or enter food quantities to explore sourced nutrition numbers.</p></article>
+      <article class="step"><div class="step-num">02</div><h3 data-en="Choose a face" data-ru="Выбери лицо" data-es="Elige un rostro" data-zh="选择面部模特">Choose a face</h3><p data-en="Use a ready-made portrait or preview your own photo locally. The current MVP focuses exclusively on the face." data-ru="Выбери готовый портрет или локально открой своё фото. Текущий MVP сосредоточен только на лице." data-es="Usa un retrato de ejemplo o previsualiza tu foto localmente. Este MVP se centra solo en el rostro." data-zh="选择预设面部照片，或在本地预览自己的照片。当前 MVP 仅聚焦面部。">Use a ready-made portrait or preview your own photo locally. The current MVP focuses exclusively on the face.</p></article>
       <article class="step"><div class="step-num">03</div><h3 data-en="See a possible scenario" data-ru="Посмотри возможный сценарий" data-es="Explora un escenario posible" data-zh="查看可能的情景">See a possible scenario</h3><p data-en="Explore a clearly labeled visual example — not a personal forecast or medical result." data-ru="Посмотри наглядный пример с обозначением, что это не диагноз и не персональный прогноз." data-es="Un ejemplo visual etiquetado claramente, no una predicción personal." data-zh="查看明确标注的示意效果，并非个人健康预测。">Explore a clearly labeled visual example — not a personal forecast or medical result.</p></article>
       <article class="step"><div class="step-num">04</div><h3 data-en="Read the context" data-ru="Узнай больше" data-es="Lee el contexto" data-zh="了解背景信息">Read the context</h3><p data-en="Find practical tips, timing notes, limitations and links to supporting materials." data-ru="Прочитай рекомендации, возможные сроки, ограничения и материалы исследований." data-es="Consejos, duración, limitaciones y fuentes de referencia." data-zh="查看建议、时间说明、局限性和参考资料。">Find practical tips, timing notes, limitations and links to supporting materials.</p></article>
     </div>
