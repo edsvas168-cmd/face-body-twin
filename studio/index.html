@@ -99,6 +99,21 @@ body{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org
   .callout::before{animation:none}
   .button,.how-card,.model-choice,.figure,.metric,.science-links a{transition:none}
 }
+
+/* Dark forest + lime identity: coordinated with landing page */
+:root{--ink:#0a1a12;--green:#14442f;--deep:#071710;--sage:#e4faaf;--lime:#c8f55f;--cream:#f7f5ee;--white:#fff;--border:#e4e1d6;--shadow:0 16px 40px rgba(7,23,16,.08)}
+.topbar{background:rgba(7,23,16,.96);border-bottom-color:rgba(255,255,255,.09)}
+.topbar .logo,.topbar .links,.topbar .links a{color:#fff}
+.topbar .logo-icon{background:#c8f55f;color:#071710}
+.topbar .button.small{background:#c8f55f;color:#071710;border-color:#c8f55f}
+.hero-wrap{background:#071710}.hero-stage{background:radial-gradient(ellipse at 51% 54%,#19513a,transparent 68%)}
+.button,.segmented button.active{border-radius:999px}.button.light{background:#c8f55f;border-color:#c8f55f;color:#071710}
+.section{background:#f7f5ee}.panel{border-radius:22px}.step-tag,.eyebrow{color:#14442f}
+.model-choice[aria-pressed="true"]{border-color:#14442f;background:#edfae0}
+.model-choice img{max-height:98px;width:100%;object-fit:cover;object-position:top center;border-radius:9px}
+.model-choice span:has(img){display:block;width:100%;min-height:98px}
+.footer-inner{color:#c7d5c9}footer{background:#04100a;color:#c7d5c9}footer .logo{color:#fff}
+@media(max-width:640px){.topbar .links{display:none}.topbar .logo{font-size:15px}.topbar .button.small{padding:9px 12px}}
 </style></head>
 <body><header class="topbar"><div class="container topbar-inner"><a class="logo" href="/"><span class="logo-icon">❧</span>Face &amp; Body Twin</a><nav class="links" aria-label="Main navigation"><a href="/">Home</a><a href="/#how">How it works</a><a href="/#science">Research</a></nav><a class="button small" aria-current="page" href="/studio/">Studio ↗</a></div></header>
 <main><div class="container studio-page-intro"><div class="eyebrow">INTERACTIVE EXPERIENCE</div><h1>Make curiosity <em>visible.</em></h1><p>Explore a possible scenario with a ready-made model or your own photo. First we calculate what is known about the food, then show a clearly labeled illustration and practical context.</p><div class="site-notice">Prototype mode: the current visual preview is not produced by YouCam AI. Face examples use a subtle local display effect; Body examples use illustrative silhouettes. Source-based nutrition calculations work independently of image effects.</div></div><section class="section container" id="studio"><div class="section-header"><div><div class="eyebrow">YOUR INTERACTIVE STUDIO</div><h2>Explore the possible.</h2></div><p>Start with a demo model or your own photo. Select foods and quantities. We’ll calculate what’s known and show a clearly labeled, illustrative scenario.</p></div>
@@ -175,7 +190,7 @@ function avatarSVG(gender,view,level=0,small=false){
  </svg>`;
 }
 function setMode(mode){state.view=mode;for(const [m,id] of [['face','faceMode'],['body','bodyMode']]){$(id).classList.toggle('active',m===mode);$(id).setAttribute('aria-pressed',m===mode)};state.generated=false;renderEmpty();renderThumbs();}
-const AVATAR_ASSETS={woman:{face:'/assets/avatars/face/woman.webp',body:'/assets/avatars/body/woman.webp'},man:{face:'/assets/avatars/face/man.webp',body:'/assets/avatars/body/man.webp'}};
+const AVATAR_ASSETS={woman:{face:'/assets/avatars/face/female-18-25-face.jpg',body:'/assets/avatars/body/female-18-25-body.jpg'},man:{face:'/assets/avatars/face/male-18-25-face.jpg',body:'/assets/avatars/body/male-18-25-body.jpg'}};
 const LEGACY_FACE={woman:'/assets/woman-portrait.webp',man:'/assets/man-portrait.webp'};
 function avatarImage(gender,mode,alt,fallback){const img=new Image();img.alt=alt;img.loading='lazy';img.src=AVATAR_ASSETS[gender][mode];img.onerror=()=>{img.onerror=null;if(mode==='face'){img.src=LEGACY_FACE[gender];}else{img.replaceWith(fallback());}};return img;}
 function renderThumbs(){for(const gender of ['woman','man']){const target=$(gender+'Thumb');target.replaceChildren(avatarImage(gender,state.view,gender+' demo '+state.view,()=>{const span=document.createElement('span');span.innerHTML=avatarSVG(gender,'body');return span;}));}}
