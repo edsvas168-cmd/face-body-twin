@@ -36,7 +36,7 @@ The one-click **Too much salt** preset uses medium intensity independently of an
 
 ## Confirmed API request structures
 
-- Face Reshape: `POST /s2s/v2.0/task/face-reshape`, `{src_file_url,version:'1.0',source:'yco',features:{face_width,face_reshape_left,face_reshape_right}}`.
+- Face Reshape: `POST /s2s/v2.0/task/face-reshape`, `{src_file_url,version:'1.0',source:'yco',features:{face_width,face_reshape_left,face_reshape_right}}`. The payload explicitly sets `global:{skin_smooth_strength:0,skin_smooth_color_intensity:0}` to avoid the beautifying skin-smoothing example used in provider docs. This prevents a default smoothing effect being accidentally enabled, but it does **not** guarantee an edema-like appearance. Inspect the request payload in Playground before spending the final free trial.
 - Skin Simulation: `POST /s2s/v2.0/task/skin-simulation`, `{src_file_url,radiance,texture,pores}`.
 - Poll `GET /s2s/v2.0/task/{kind}/{task_id}` using the task's actual kind.
 
