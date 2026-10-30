@@ -106,7 +106,9 @@
       // Fields and schema from Perfect Corp AI Face Reshape overview.
       return {kind:'face-reshape',endpoint:'/s2s/v2.0/task/face-reshape',payload:{
         src_file_url:srcFileUrl,version:'1.0',source:'yco',
-        features:{...plan.parameters}
+        features:{...plan.parameters},
+        // Never apply the provider's illustrative smoothing preset to a puffiness comparison.
+        global:{skin_smooth_strength:0,skin_smooth_color_intensity:0}
       }};
     }
     if(plan.apiKind==='skin-simulation'){
