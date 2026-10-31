@@ -16,6 +16,7 @@ module.exports=async function handler(req,res){
  res.setHeader('Cache-Control','no-store');
  res.setHeader('X-Content-Type-Options','nosniff');
  if(req.method!=='POST')return res.status(405).json({error:'Method not allowed'});
+ if(process.env.YOUCAM_LEGACY_ENABLED!=='true')return res.status(410).json({error:'Legacy face-reshape tests are retired. Use the new Skin Journey workflow.'});
  if(process.env.YOUCAM_DEMO_ENABLED!=='true')return res.status(503).json({error:'Private YouCam tests are disabled until the owner enables them.'});
  if(!process.env.YOUCAM_API_KEY)return res.status(503).json({error:'YouCam API key is not configured.'});
  const input=req.body&&typeof req.body==='object'?req.body:{};
