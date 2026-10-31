@@ -1,3 +1,7 @@
+# Update: Skin Journey workflow replaces legacy Face Reshape
+
+The new skin-analysis → care-categories → skin-simulation flow lives in **[SKIN_JOURNEY_SETUP_RU.md](SKIN_JOURNEY_SETUP_RU.md)**. Legacy `/api/youcam-start` and `/api/youcam-status` are now **disabled by default** (410) unless `YOUCAM_LEGACY_ENABLED=true`, which is not recommended. This document below describes the earlier technical prototype only; do not follow its old Face Reshape testing instructions for the current product.
+
 # Face & Body Twin — scenario engine and YouCam private test
 
 Status: **code integrated, no API calls performed, no units spent**. The real image effects must still be verified in YouCam Playground / Vercel before being described as live production features.
