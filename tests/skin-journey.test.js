@@ -1,0 +1,7 @@
+const test=require('node:test'),assert=require('node:assert/strict');
+const j=require('../shared/skin-journey.js');
+test('analysis uses real v2.1 endpoint fields',()=>{const t=j.taskDefinition('analyze','https://example.com/a.jpg','salt');assert.equal(t.version,'v2.1');assert.equal(t.payload.format,'json');assert.ok(t.payload.dst_actions.includes('eye_bag'));assert.ok(t.payload.dst_actions.includes('skin_type'));});
+test('skin simulation uses improvement not face reshape',()=>{const t=j.taskDefinition('improve','https://example.com/a.jpg','salt');assert.equal(t.kind,'skin-simulation');assert.equal(t.version,'v2.0');assert.ok(t.payload.eye_bags>0);assert.equal(t.payload.face_width,undefined);});
+test('only public built-in avatar URLs',()=>{assert.match(j.avatarUrl('female','18-25','salt',true),/^https:\/\/face-body-twin\.vercel\.app\/assets\/scenarios\/salt\/female-18-25-face\.jpg$/);assert.throws(()=>j.avatarUrl('random','18-25','salt',false));});
+test('scores from output array and lower scores prioritize care',()=>{const a=j.parseAnalysis({output:[{type:'moisture',ui_score:42},{type:'acne',ui_score:78}]});assert.equal(a.scores[0].type,'moisture');assert.match(j.careForAnalysis(a,'salt').products[1].name,/церамид/);});
+test('missing data never fabricated',()=>{const a=j.parseAnalysis({output:[]});assert.equal(a.scores.length,0);assert.equal(a.overall,null);assert.match(j.careForAnalysis(a,'salt').source,/не выполнена/);});
