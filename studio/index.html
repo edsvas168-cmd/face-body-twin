@@ -210,6 +210,19 @@ h1,h2,h3,.logo,.panel-title,.metric strong,.button,.scenario-heading strong,.sce
 
 .ai-demo{background:#eaf3e4;margin:18px 24px 0;padding:20px;border-radius:14px;border:1px solid #dae7d5}.ai-demo strong{font:700 14px 'Space Grotesk',sans-serif}.ai-demo p{font:12px/1.6 'IBM Plex Sans',sans-serif;color:#54705b;margin:8px 0}.ai-consent{display:flex;gap:9px;align-items:start;font:12px/1.6 'IBM Plex Sans',sans-serif;color:#28412e}.ai-start{margin:14px 0 8px;padding:12px 18px;background:#173b25;color:#fff;border:0;border-radius:12px;font:600 12px 'Space Grotesk',sans-serif;cursor:pointer}.ai-start:disabled{opacity:.55;cursor:wait}.ai-feedback{font-size:12px;color:#496250}.ai-result{display:block;margin:15px auto 5px;max-width:min(100%,330px);border-radius:12px}.ai-result.hidden{display:none}@media(max-width:550px){.ai-demo{margin:12px 12px 0;padding:14px}}
 .mapping-note{margin:14px 24px;padding:12px 16px;background:#f0f7e7;border-radius:12px;font:12px/1.6 'IBM Plex Sans',sans-serif;color:#355241}.ai-private-label{display:block;font-size:12px;font-weight:600;margin-top:12px}.ai-private-input{display:block;max-width:300px;width:100%;padding:11px 12px;border:1px solid #a7bcaa;border-radius:10px;background:white;font:13px 'IBM Plex Sans',sans-serif}.ai-start:disabled{opacity:.48;cursor:not-allowed}
+
+/* Skin journey: staged demo character -> skin scan -> care categories -> cosmetic edit */
+.skin-journey{margin:17px 24px 8px;border:1px solid #d1e0c8;background:#f5f9ef;border-radius:17px;padding:19px}
+.skin-journey h3{font:700 17px 'Space Grotesk',sans-serif;color:#153c2b;margin:0 0 7px}
+.skin-journey p,.skin-journey small{font-size:12px;line-height:1.65;color:#4b6655}
+.journey-steps{display:flex;flex-wrap:wrap;gap:6px;margin:13px 0}.journey-steps span{background:#e7f0dd;border-radius:30px;padding:6px 9px;font-size:11px;font-weight:600}
+.journey-actions{display:flex;flex-wrap:wrap;gap:9px;margin:15px 0}.journey-actions button{background:#17412b;color:white;border:0;border-radius:10px;padding:11px 13px;font-size:12px;cursor:pointer;font-weight:650}.journey-actions button:disabled{opacity:.43;cursor:not-allowed}
+.journey-report{background:white;border:1px solid #e1e9de;border-radius:12px;padding:13px;margin:10px 0}.journey-report h4{font-size:13px;margin:0 0 9px}.journey-report p{margin:4px 0}.journey-report ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}.journey-report li{font-size:12px;line-height:1.55;border-bottom:1px solid #eef1ea;padding:5px 0}
+.journey-report li:last-child{border:0}.journey-pill{display:inline-block;background:#ecf3e3;padding:4px 8px;border-radius:8px;margin:0 6px 6px 0;font-size:11px}
+.journey-status{font-size:12px;color:#345341;margin:10px 0;min-height:17px}
+.scenario-placeholder{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:11px;padding:20px;text-align:center;min-height:200px;width:100%;height:100%;background:linear-gradient(145deg,#ebf3e8,#e7eee4);color:#345543;font-size:13px;line-height:1.5}
+.scenario-placeholder b{font-size:35px}
+@media(max-width:550px){.skin-journey{margin:12px;padding:15px}.journey-actions button{width:100%}}
 </style></head>
 <body><header class="topbar"><div class="container topbar-inner"><a class="logo" href="/"><span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 40 40" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="19" r="9" stroke="currentColor" stroke-width="3"/><circle cx="25" cy="21" r="9" stroke="currentColor" stroke-width="3"/><path d="M20 7v5M17.5 9.5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Face &amp; Body Twin</a><div class="studio-languages" aria-label="Language"><button type="button" data-studio-lang="en">EN</button><button type="button" data-studio-lang="ru">RU</button><button type="button" data-studio-lang="es">ES</button><button type="button" data-studio-lang="zh">中文</button></div><nav class="links" aria-label="Main navigation"><a href="/">Home</a><a href="/#how">How it works</a><a href="/#science">Research</a></nav><a class="button small" aria-current="page" href="/studio/">Studio </a></div></header>
 <main><div class="container studio-page-intro"><div class="eyebrow">INTERACTIVE EXPERIENCE</div><h1><span>Food &amp; appearance.</span> <em>Facts, not myths.</em></h1><p>Explore popular food trends with sourced nutrition numbers, research context and clearly labeled Face Twin examples — not predictions.</p><div class="site-notice">Prototype mode: food figures use reference data. Face previews are illustrations, not food-effect predictions. Live YouCam processing is available only for private testing after setup.</div></div><section class="section container" id="studio"><div class="section-header"><div><div class="eyebrow">YOUR INTERACTIVE STUDIO</div><h2>Explore the evidence.</h2></div><p>Choose a food trend, inspect reference nutrition numbers and explore clearly labeled face illustrations with supporting context.</p></div>
@@ -235,7 +248,18 @@ h1,h2,h3,.logo,.panel-title,.metric strong,.button,.scenario-heading strong,.sce
 <label class="consent"><input id="consent" type="checkbox"/><span>I understand visual results are illustrative, not a medical forecast. If I upload a photo, I consent to processing it locally in this browser for this demo.</span></label>
 <button class="button full" id="generate" type="button">Generate my twin</button><div class="error" id="formError" role="alert"></div></div></details>
 </div></div>
-<div class="panel result-panel" id="results"><div class="intro-result" id="emptyResult"><div class="circle">✧</div><div><h3>See your food scenario</h3><p>Select a one-tap scenario above, or add a food item to see your scenario.</p><button type="button" id="tryExample" class="example-button">Try an example · 1 can of cola</button></div></div><div class="hidden" id="resultContent"><div class="result-flex"><div class="result-main"><div class="results-top"><div class="result-title"><span class="panel-title" id="resultHeading">Face Twin</span><span class="status">ILLUSTRATION</span></div><div class="comparison"><div class="figure" id="beforeFigure"><div class="figure-image" id="beforeVisual"></div><div class="figure-label">Original model</div></div><div class="figure after" id="afterFigure"><div class="figure-image" id="afterVisual"></div><div class="upload-overlay"></div><div class="figure-label">Possible scenario</div></div></div><div class="ai-demo"><div><strong>Optional YouCam visual scenario</strong><p>The scenario engine selects a supported cosmetic edit (Face Reshape or Skin Simulation). This is a visual illustration, not an outcome predicted from food. Only a public demo avatar is sent.</p></div><label class="ai-consent"><input type="checkbox" id="aiConsent"/> I agree to send the selected public demo avatar to YouCam for AI processing.</label><label class="ai-private-label" for="aiAccessCode">Private test access code</label><input id="aiAccessCode" type="password" autocomplete="off" placeholder="Only for project owner" class="ai-private-input"/><button type="button" class="ai-start" id="aiStart">Generate via YouCam</button><div class="ai-feedback" id="aiFeedback" role="status" aria-live="polite">API mode is disabled until the project owner configures it.</div><img id="aiResult" alt="YouCam cosmetic skin enhancement demonstration" class="hidden ai-result"/></div><p class="mapping-note" id="mappingInfo" role="status"></p><p class="visual-footnote" id="visualNote"><strong>Not a medical device. For educational illustration only.</strong> This prototype shows examples, not AI-based predictions or measured skin changes.</p></div><div class="panel-pad"><div class="step-tag" id="foodSummaryLabel">YOUR FOOD SUMMARY</div><div class="metric-grid" id="nutritionMetrics" style="margin-top:12px"><div class="metric"><span class="k">Sodium</span><strong id="sodiumMetric">—</strong><small id="sodiumUnit">mg · partial if unknown</small></div><div class="metric"><span class="k">Total sugars</span><strong id="sugarMetric">—</strong><small>g</small></div><div class="metric"><span class="k">Energy</span><strong id="calorieMetric">—</strong><small>kcal</small></div></div><div class="warning" id="safetyWarning"></div><div class="result-summary"><h3 id="scenarioTitle">Possible scenario</h3><p id="scenarioDescription"></p></div><h3 style="font-size:14px;margin:22px 0 0">What could help?</h3><ul class="recommendations" id="recommendations"></ul><div class="timebox"><strong>⏱ About timing</strong><p id="timeText"></p></div><div class="source-links" id="resultSources"></div><p class="privacy-hint">These are general educational suggestions, not medical instructions or treatment. Individual responses vary.</p></div></div><aside class="care-sidebar" aria-label="Suggested skincare products"><h3>Suggested skincare essentials</h3><p>General care ideas, not treatment for food effects. No sponsored products.</p><div class="care-items" id="careItems"></div><small>Use products that suit your skin; ask a dermatologist if symptoms persist. Product suggestions do not mean the food caused a skin condition.</small></aside></div></div></div>
+<div class="panel result-panel" id="results"><div class="intro-result" id="emptyResult"><div class="circle">✧</div><div><h3>See your food scenario</h3><p>Select a one-tap scenario above, or add a food item to see your scenario.</p><button type="button" id="tryExample" class="example-button">Try an example · 1 can of cola</button></div></div><div class="hidden" id="resultContent"><div class="result-flex"><div class="result-main"><div class="results-top"><div class="result-title"><span class="panel-title" id="resultHeading">Face Twin</span><span class="status">ILLUSTRATION</span></div><div class="comparison"><div class="figure" id="beforeFigure"><div class="figure-image" id="beforeVisual"></div><div class="figure-label">Original model</div></div><div class="figure after" id="afterFigure"><div class="figure-image" id="afterVisual"></div><div class="upload-overlay"></div><div class="figure-label">Possible scenario</div></div></div><div class="skin-journey" id="skinJourney">
+<h3>Анализ кожи и подбор ухода — YouCam</h3>
+<p>Готовая фотография персонажа показывает условный сценарий. YouCam может проанализировать кожу на изображении, а затем создать её косметически улучшенную версию. Это не прогноз последствий еды и не лечение отёков.</p>
+<div class="journey-steps"><span>① Сценарная фотография</span><span>② Анализ YouCam</span><span>③ Подбор типов средств</span><span>④ Улучшение YouCam</span></div>
+<div id="scenarioAssetNotice" class="journey-status">Для полного сценария нужна заранее обработанная фотография.</div>
+<label class="ai-consent"><input id="journeyConsent" type="checkbox"/> Согласна отправить общедоступную демонстрационную фотографию персонажа в YouCam. Мои личные фотографии не отправляются.</label>
+<label class="ai-private-label" for="journeyCode">Код доступа для закрытого теста</label>
+<input id="journeyCode" type="password" autocomplete="off" placeholder="Только для автора проекта" class="ai-private-input"/>
+<div class="journey-actions"><button id="journeyAnalyze" type="button">2. Анализировать кожу через API</button><button id="journeyImprove" type="button" disabled>4. Улучшить кожу через API</button></div>
+<div role="status" aria-live="polite" id="journeyFeedback" class="journey-status">API доступен только в закрытом тестовом режиме после настройки.</div>
+<div class="journey-report"><h4>3. Анализ и рекомендации</h4><div id="journeyAnalysis">Нажми «Анализировать кожу», чтобы получить данные API.</div><ul id="journeyCare"><li>Рекомендации появятся после анализа; мы не придумываем результаты заранее.</li></ul><p id="journeyCareNote">Кремы не лечат задержку жидкости из-за соли. Подбираются категории ухода, а не конкретные товары YouCam.</p></div>
+</div><p class="mapping-note" id="mappingInfo" role="status"></p><p class="visual-footnote" id="visualNote"><strong>Not a medical device. For educational illustration only.</strong> This prototype shows examples, not AI-based predictions or measured skin changes.</p></div><div class="panel-pad"><div class="step-tag" id="foodSummaryLabel">YOUR FOOD SUMMARY</div><div class="metric-grid" id="nutritionMetrics" style="margin-top:12px"><div class="metric"><span class="k">Sodium</span><strong id="sodiumMetric">—</strong><small id="sodiumUnit">mg · partial if unknown</small></div><div class="metric"><span class="k">Total sugars</span><strong id="sugarMetric">—</strong><small>g</small></div><div class="metric"><span class="k">Energy</span><strong id="calorieMetric">—</strong><small>kcal</small></div></div><div class="warning" id="safetyWarning"></div><div class="result-summary"><h3 id="scenarioTitle">Possible scenario</h3><p id="scenarioDescription"></p></div><h3 style="font-size:14px;margin:22px 0 0">What could help?</h3><ul class="recommendations" id="recommendations"></ul><div class="timebox"><strong>⏱ About timing</strong><p id="timeText"></p></div><div class="source-links" id="resultSources"></div><p class="privacy-hint">These are general educational suggestions, not medical instructions or treatment. Individual responses vary.</p></div></div><aside class="care-sidebar" aria-label="Suggested skincare products"><h3>Suggested skincare essentials</h3><p>General care ideas, not treatment for food effects. No sponsored products.</p><div class="care-items" id="careItems"></div><small>Use products that suit your skin; ask a dermatologist if symptoms persist. Product suggestions do not mean the food caused a skin condition.</small></aside></div></div></div>
 </div></section></main>
 <footer><div class="container footer-inner"><div><a class="logo" href="/"><span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 40 40" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="19" r="9" stroke="currentColor" stroke-width="3"/><circle cx="25" cy="21" r="9" stroke="currentColor" stroke-width="3"/><path d="M20 7v5M17.5 9.5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Face &amp; Body Twin</a><p>Educational visual exploration, not medical advice. Photos stay in your browser in this prototype. Effects are illustrations, not personal forecasts.</p></div><div class="footer-meta"><a href="/"> Back to home</a><br>© 2026 Face &amp; Body Twin</div></div></footer>
 <p style="text-align:center;font-size:11px;padding:10px 18px;color:#65736a">Character assets were created with generative AI tools and used as illustrative visual models.</p>
@@ -248,7 +272,7 @@ const ENGINE=FBTScenarioEngine;
 const SOURCE_WHO={name:'WHO · Sodium guidance',url:'https://www.who.int/news-room/fact-sheets/detail/sodium-reduction'};
 const SOURCE_AAD={name:'AAD · Diet and acne',url:'https://www.aad.org/public/diseases/acne/causes/diet'};
 const SOURCE_USDA={name:'USDA FoodData Central',url:'https://fdc.nal.usda.gov/'};
-const state={scenario:null,model:'woman',age:'18-25',photo:null,photoUrl:null,intent:'hypothetical',items:[],generated:false};
+const state={scenario:null,model:'woman',age:'18-25',photo:null,photoUrl:null,intent:'hypothetical',items:[],generated:false,scenarioPhotoReady:false,journeyRun:0};
 const $=id=>document.getElementById(id);
 const fmt=(n,d=0)=>Number(n).toLocaleString('en-US',{maximumFractionDigits:d});
 const avatarPath=gender=>'/assets/avatars/face/'+(gender==='woman'?'female':'male')+'-'+state.age+'-face.jpg';
@@ -263,7 +287,21 @@ function showError(str){$('formError').textContent=str;$('formError').classList.
 function addFood(){state.scenario=null;document.querySelectorAll('.scenario-card').forEach(b=>b.classList.remove('active'));const food=$('foodSelect').value,amount=Number($('amount').value),unit=$('unit').value;if(!Number.isFinite(amount)||amount<0.1||amount>100){$('amount').classList.add('field-invalid');showError('Please enter a number between 0.1 and 100.');return}$('amount').classList.remove('field-invalid');showError('');state.items.push({food,amount,unit});renderItems();state.generated=false;renderEmpty()}
 function calculate(items){return ENGINE.calculateNutrition(items,CATALOG)}
 function showWarning(text){$('safetyWarning').textContent=text;$('safetyWarning').classList.toggle('show',!!text)}
-function figureModel(el,scenario,after){el.replaceChildren();if(state.model==='upload'&&state.photoUrl){const img=new Image();img.alt='Unmodified uploaded face photo';img.src=state.photoUrl;el.append(img);return;}const gender=state.model==='man'?'man':'woman';const img=avatarImage(gender,gender+' illustrative face model');if(after&&scenario.level>0&&!scenario.risky){img.className='preview-soft';}el.append(img);}
+function figureModel(el,scenario,after){
+ el.replaceChildren();
+ if(state.model==='upload'&&state.photoUrl){const img=new Image();img.alt='Личное фото без изменения';img.src=state.photoUrl;el.append(img);return;}
+ if(after){const box=document.createElement('div');box.className='scenario-placeholder';const bold=document.createElement('b');bold.textContent='✧';const txt=document.createElement('span');txt.textContent='Здесь появится результат после отдельного запуска YouCam Skin Simulation';box.append(bold,txt);el.append(box);return;}
+ const gender=state.model==='man'?'male':'female';
+ const base='/assets/avatars/face/'+gender+'-'+state.age+'-face.jpg';
+ const img=new Image();img.alt='Демонстрационный AI-персонаж';img.loading='lazy';
+ const token=state.journeyRun;
+ if(state.scenario){
+  img.onload=()=>{if(token!==state.journeyRun)return;state.scenarioPhotoReady=true;$('scenarioAssetNotice').textContent='Сценарная фотография загружена. Анализ относится к обработанной иллюстрации, а не к реальному человеку.';};
+  img.onerror=()=>{if(token!==state.journeyRun)return;state.scenarioPhotoReady=false;img.onerror=null;img.onload=null;img.src=base;$('scenarioAssetNotice').textContent='Для этого сценария пока нет отдельной обработанной фотографии. Сейчас показан исходный персонаж; API сможет проанализировать только его.';};
+  img.src='/assets/scenarios/'+state.scenario+'/'+gender+'-'+state.age+'-face.jpg';
+ }else{img.src=base;}
+ el.append(img);
+}
 function renderEmpty(){$('emptyResult').classList.remove('hidden');$('resultContent').classList.add('hidden')}
 function sourceLink(name,url){const a=document.createElement('a');a.href=url;a.textContent=name+' ';a.target='_blank';a.rel='noopener noreferrer';return a}
 function renderResult(){showError('');if(!state.scenario&&!state.items.length){showError('Add at least one food to generate a scenario.');return}if(state.model==='upload'&&!$('consent').checked){showError('Please acknowledge the photo privacy notice first.');return}if(state.model==='upload'&&!state.photoUrl){showError('Please upload a supported image, or select a demo model.');return}
@@ -271,13 +309,19 @@ function renderResult(){showError('');if(!state.scenario&&!state.items.length){s
  try{plan=ENGINE.resolveScenario({scenarioId:state.scenario,items:state.scenario?[]:state.items,catalog:CATALOG})}
  catch(e){showError(e.message||'Unable to calculate this scenario.');return}
  const t=plan.totals,s={risky:plan.risky,kind:plan.kind,level:plan.apiEligible&&plan.kind==='salt'?plan.intensity:0};
- $('mappingInfo').textContent=plan.apiEligible?('Scenario engine: '+plan.apiKind+' / '+plan.tier+'. '+plan.reason):('Scenario engine: '+plan.reason);
- $('aiStart').disabled=!plan.apiEligible;
- $('aiFeedback').textContent=plan.apiEligible?'YouCam is prepared for a private test. API processing is disabled until enabled by the project owner.':'This scenario currently has no verified YouCam visual effect.';
- $('aiResult').classList.add('hidden');
+ $('mappingInfo').textContent=state.scenario?'Workflow: demonstration photo → YouCam Skin Analysis → care categories based on returned scores → YouCam Skin Simulation. Neither API diagnoses food effects.':('Scenario engine: '+plan.reason);
+ state.journeyRun++;state.scenarioPhotoReady=false;
+ $('journeyAnalyze').disabled=!state.scenario||state.model==='upload';
+ $('journeyImprove').disabled=true;
+ $('journeyAnalysis').textContent='Оценки ещё не получены — нажми «Анализировать кожу».';
+ $('journeyCare').replaceChildren();
+ const careDefault=document.createElement('li');careDefault.textContent='Рекомендации появятся только после ответа YouCam.';$('journeyCare').append(careDefault);
+ $('journeyFeedback').textContent=state.model==='upload'?'Личное фото остаётся в браузере; YouCam доступен только для демонстрационных персонажей.':state.scenario?'Новый сценарий готов. Для API нужен приватный код и согласие.':'Для анализа выбери один из готовых сценариев.';
  $('foodSummaryLabel').textContent=state.scenario?'SCENARIO NOTES':'YOUR FOOD SUMMARY';
  $('nutritionMetrics').classList.toggle('hidden',Boolean(state.scenario));
  $('emptyResult').classList.add('hidden');$('resultContent').classList.remove('hidden');$('resultHeading').textContent='Your Face Twin';$('sodiumMetric').textContent=state.scenario?'N/A':t.hasUnknownSodium&&t.sodium===0?'No data':fmt(t.sodium);$('sodiumUnit').textContent=t.hasUnknownSodium?'mg · known items only':'mg · known items';$('sugarMetric').textContent=state.scenario?'N/A':t.hasUnknownSugar&&t.sugar===0?'No data':fmt(t.sugar,1)+(t.hasUnknownSugar?'*':'');$('calorieMetric').textContent=state.scenario?'N/A':t.hasUnknownKcal&&t.kcal===0?'No data':fmt(t.kcal)+(t.hasUnknownKcal?'*':'');$('afterFigure').classList.remove('photo-sim');$('beforeFigure').classList.remove('photo-sim');figureModel($('beforeVisual'),s,false);figureModel($('afterVisual'),s,true);
+ $('beforeFigure').querySelector('.figure-label').textContent=state.model==='upload'?'Локальное фото':'Сценарная фотография / демонстрационная модель';
+ $('afterFigure').querySelector('.figure-label').textContent='Результат YouCam появится после обработки';
  let title,description,recs,time;
  if(state.scenario){const details={salt:['Possible temporary puffiness','Sodium is involved in fluid balance. A salty meal may coincide with temporary puffiness for some people, but we cannot predict a particular face change.',['Resume normal eating and drinking habits.','If you notice persistent or significant swelling, consult a clinician.'],'Timing varies; no reliable prediction is possible.'],fastfood:['Frequent fast-food pattern','Frequent fast-food meals vary greatly. Some high-glycemic eating patterns may be linked with acne in susceptible individuals, but a single burger cannot forecast new spots.',['Consider more varied meals over time.','Try a gentle, consistent skincare routine.'],'Skin patterns are observed over weeks, not one meal.'],transfat:['Frequent trans-fat exposure','Industrial trans fats are a cardiovascular health concern. There is not enough evidence to show a particular visible skin change from one exposure; this image is unchanged.',['Check ingredient labels for partially hydrogenated oils where applicable.','Favor varied sources of unsaturated fats.'],'No evidence-based skin appearance timeline.'],energy:['Frequent energy-drink pattern','Energy drinks vary in sugar and caffeine. Sleep disruption can influence wellbeing, while a specific acne or facial change cannot be predicted from one drink.',['Consider caffeine timing and sleep quality.','Check the drink label and choose water regularly.'],'No reliable immediate skin-change prediction.'],balanced:['Balanced eating and skin health','A balanced eating pattern supports general health. Some studies suggest lower-glycemic diets can help certain people with acne over weeks, but no specific improvement can be promised or visualized from one meal.',['Aim for a varied, sustainable eating pattern.','Avoid expecting visible changes after a single meal.'],'Effects, if any, may take weeks and depend on the individual.'],sun:['Sun exposure and skin','Sun UV exposure can contribute to photoaging, uneven pigmentation and wrinkles over time. Device screens emit visible light, not meaningful skin-damaging UV; they are not comparable to sunlight.',['Use broad-spectrum SPF 30+ as appropriate.','Seek shade and protective clothing during strong sunlight.'],'UV-related photoaging accumulates over time, not after one screen session.']};const d=details[state.scenario];title=d[0];description=d[1];recs=d[2];time=d[3];showWarning('Illustrative example only — not a prediction or medical advice.');}
  else 
@@ -287,7 +331,7 @@ function renderResult(){showError('');if(!state.scenario&&!state.items.length){s
  else if(s.kind==='sugar'){title='High-sugar food scenario';description='The entered foods contribute sugar and energy. Studies suggest high-glycemic eating patterns may be associated with acne in some people. A single day of sugar intake does not provide a reliable basis for drawing new pimples or changing your face, so the visual stays unchanged.';recs=['Consider the full pattern of meals, not one food in isolation.','Choose water or unsweetened drinks when you prefer to reduce free sugars.','If you have acne concerns, consult a dermatologist for evidence-based guidance.'];time='Acne-related diet research generally concerns ongoing eating patterns over weeks, not a predictable same-day facial reaction.';showWarning('');}
  else {title='No reliable visual change can be inferred';description='The entered foods have been calculated using the available reference values. From these items alone, there is no defensible immediate face or body change to visualize. That is a meaningful result too.';recs=['Look at overall eating patterns rather than judging one meal.','Use food-label information for the most accurate quantities.','For concerns about skin, swelling or health, seek qualified guidance.'];time='No specific duration can be estimated without a clinically defined effect.';showWarning('');}
  if(s.risky){$('afterVisual').innerHTML=$('beforeVisual').innerHTML;}
- $('scenarioTitle').textContent=title;$('scenarioDescription').textContent=description;$('recommendations').innerHTML='';recs.forEach(t=>{const li=document.createElement('li');li.textContent=t;$('recommendations').append(li)});$('timeText').textContent=time;$('visualNote').textContent=state.model==='upload'?'Not a medical device. Your uploaded photo is displayed unchanged on both sides. This demo does not send your photo to YouCam.':'Not a medical device. For educational illustration only. Demo models show illustrative artwork and a subtle preview effect, not measured physiological changes. AI generation is an independent optional test.';
+ $('scenarioTitle').textContent=title;$('scenarioDescription').textContent=description;$('recommendations').innerHTML='';recs.forEach(t=>{const li=document.createElement('li');li.textContent=t;$('recommendations').append(li)});$('timeText').textContent=time;$('visualNote').textContent=state.model==='upload'?'Not a medical device. Your uploaded photo is displayed unchanged on both sides. This demo does not send your photo to YouCam.':'Not a medical device. For educational illustration only. Scenario photos are illustrative, not measured physiological changes. Skin Analysis and Skin Simulation are optional independent YouCam tests.';
  const sources=$('resultSources');sources.innerHTML='';sources.append(sourceLink(SOURCE_WHO.name,SOURCE_WHO.url),sourceLink(SOURCE_AAD.name,SOURCE_AAD.url));for(const id of new Set(state.items.map(x=>x.food))){const f=CATALOG[id];sources.append(sourceLink(id==='cola'?'Cola · Example label':id==='burger'?'Cheeseburger reference':id==='fries'?'Fries reference':id==='sugar'?'USDA · Ingredient data':'WHO · Salt conversion',f.source))}if(t.hasUnknownSodium){const p=document.createElement('span');p.style.cssText='font-size:10px;color:#946c3e';p.textContent='Some sodium data are unknown. Total is incomplete.';sources.append(p)};
  const tips=[['Gentle cleanser','Clean without harsh scrubbing'],['Fragrance-free moisturizer','Support the skin barrier'],['Broad-spectrum SPF 30+','Everyday sun protection']];$('careItems').replaceChildren(...tips.map(([name,desc])=>{const box=document.createElement('div');box.className='care-item';const strong=document.createElement('strong');strong.textContent=name;const span=document.createElement('span');span.textContent=desc;box.append(strong,span);return box;}));
  state.generated=true;$('results').scrollIntoView({behavior:'smooth',block:'start'});
@@ -366,4 +410,62 @@ renderThumbs();updateUnits();
  });
 })();
 </script>
-</body></html>
+<script>
+(function(){
+ const byId=id=>document.getElementById(id),analyze=byId('journeyAnalyze'),improve=byId('journeyImprove'),feedback=byId('journeyFeedback');
+ const names={salt:'много соли',fastfood:'фастфуд',transfat:'трансжиры',energy:'энергетики',balanced:'сбалансированное питание',sun:'солнце'};
+ let busy=false,step=0;
+ function listCare(care){
+  const target=byId('journeyCare');target.replaceChildren();
+  for(const item of care.products||[]){const li=document.createElement('li');const strong=document.createElement('strong');strong.textContent=item.name;li.append(strong,document.createTextNode(' — '+item.detail));target.append(li);}
+  byId('journeyCareNote').textContent=(care.source||'')+' '+(care.note||'');
+ }
+ function showAnalysis(data){
+  const box=byId('journeyAnalysis');box.replaceChildren();
+  const a=data.analysis||{},scores=Array.isArray(a.scores)?a.scores:[];
+  if(a.overall!==null&&a.overall!==undefined){const p=document.createElement('p');p.textContent='Оценка YouCam: '+a.overall+'/100 (выше — лучше).';box.append(p);}
+  if(a.skinType){const p=document.createElement('p');p.textContent='Определённый тип кожи: '+a.skinType;box.append(p);}
+  if(!scores.length){const p=document.createElement('p');p.textContent='YouCam не вернул распознаваемые числовые оценки. Не будем выдумывать диагноз.';box.append(p);}
+  else scores.forEach(s=>{const tag=document.createElement('span');tag.className='journey-pill';tag.textContent=s.label+': '+s.score+'/100';box.append(tag)});
+  listCare(data.care||{products:[]});improve.disabled=false;
+ }
+ async function run(action){
+  if(busy)return;
+  if(!state.generated||!state.scenario){feedback.textContent='Сначала выбери готовый сценарий.';return;}
+  if(state.model==='upload'){feedback.textContent='Личные фото не отправляются в YouCam. Выбери тестового персонажа.';return;}
+  if(!byId('journeyConsent').checked){feedback.textContent='Отметь согласие на отправку демонстрационного персонажа.';return;}
+  const code=byId('journeyCode').value;
+  if(code.length<16){feedback.textContent='Нужен приватный код доступа длиной от 16 символов.';return;}
+  if(action==='improve'&&step!==state.journeyRun){feedback.textContent='Сначала выполни анализ текущего сценария.';return;}
+  busy=true;analyze.disabled=true;improve.disabled=true;
+  const runId=state.journeyRun;
+  feedback.textContent=action==='analyze'?'Отправляем тестовое фото на анализ YouCam…':'Запускаем косметическую обработку YouCam…';
+  try{
+   const payload={action,gender:state.model==='man'?'male':'female',age:state.age,scenario:state.scenario,scenarioPhoto:state.scenarioPhotoReady,consent:true,accessCode:code};
+   const r=await fetch('/api/skin-journey-start',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+   const started=await r.json();if(!r.ok)throw Error(started.error||'Ошибка запуска API');
+   for(let i=0;i<18;i++){
+    await new Promise(resolve=>setTimeout(resolve,5000));
+    if(runId!==state.journeyRun){feedback.textContent='Сценарий сменился. Предыдущий результат не применяется.';return;}
+    const url='/api/skin-journey-status?action='+encodeURIComponent(action)+'&taskId='+encodeURIComponent(started.taskId)+'&scenario='+encodeURIComponent(state.scenario);
+    const r2=await fetch(url,{headers:{'x-demo-access-code':code}});
+    const data=await r2.json();if(!r2.ok)throw Error(data.error||'Ошибка проверки результата');
+    if(data.status==='error')throw Error(data.error||'Задача завершилась ошибкой');
+    if(data.status==='success'){
+     if(action==='analyze'){showAnalysis(data);step=runId;feedback.textContent='Анализ завершён. Показаны реальные оценки API и подобранные по ним категории ухода. Теперь можно проверить косметическое улучшение.';}
+     else if(data.resultUrl){const img=new Image();img.alt='Косметическая иллюстрация после YouCam Skin Simulation';img.src=data.resultUrl;
+       img.onload=()=>{if(runId===state.journeyRun){byId('afterVisual').replaceChildren(img);byId('afterFigure').querySelector('.figure-label').textContent='Реальное AI-редактирование YouCam';}};
+       img.onerror=()=>{feedback.textContent='API завершил работу, но изображение не открылось.';};
+       feedback.textContent='YouCam обработал фотографию. Это косметический эффект, не доказанное восстановление после еды.';}
+     else feedback.textContent='YouCam завершил задачу, но формат изображения требует проверки.';
+     return;
+    }
+   }
+   feedback.textContent='Обработка ещё идёт. Повторять платный запуск не стоит; сначала проверь историю задач в YouCam.';
+  }catch(e){feedback.textContent=e.message||'Не удалось обратиться к YouCam.';}
+  finally{busy=false;if(runId===state.journeyRun){analyze.disabled=false;improve.disabled=step!==runId;}}
+ }
+ analyze.addEventListener('click',()=>run('analyze'));
+ improve.addEventListener('click',()=>run('improve'));
+})();
+</script></body></html>
