@@ -302,7 +302,7 @@ function figureModel(el,scenario,after){
  }else{img.src=base;}
  el.append(img);
 }
-function renderEmpty(){$('emptyResult').classList.remove('hidden');$('resultContent').classList.add('hidden')}
+function renderEmpty(){state.journeyRun++;state.scenarioPhotoReady=false;$('emptyResult').classList.remove('hidden');$('resultContent').classList.add('hidden')}
 function sourceLink(name,url){const a=document.createElement('a');a.href=url;a.textContent=name+' ';a.target='_blank';a.rel='noopener noreferrer';return a}
 function renderResult(){showError('');if(!state.scenario&&!state.items.length){showError('Add at least one food to generate a scenario.');return}if(state.model==='upload'&&!$('consent').checked){showError('Please acknowledge the photo privacy notice first.');return}if(state.model==='upload'&&!state.photoUrl){showError('Please upload a supported image, or select a demo model.');return}
  let plan;
@@ -413,7 +413,7 @@ renderThumbs();updateUnits();
 <script>
 (function(){
  const byId=id=>document.getElementById(id),analyze=byId('journeyAnalyze'),improve=byId('journeyImprove'),feedback=byId('journeyFeedback');
- const names={salt:'много соли',fastfood:'фастфуд',transfat:'трансжиры',energy:'энергетики',balanced:'сбалансированное питание',sun:'солнце'};
+ 
  let busy=false,step=0;
  function listCare(care){
   const target=byId('journeyCare');target.replaceChildren();
